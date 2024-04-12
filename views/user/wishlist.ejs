@@ -1,0 +1,471 @@
+<%- include('../layouts/homeheader.ejs') -%>
+    <!-- Add your site or application content here -->
+
+<!-- Body main wrapper start -->
+<div class="body-wrapper">
+
+    <!-- HEADER AREA START (header-4) -->
+    <header class="ltn__header-area ltn__header-4 ltn__header-transparent gradient-color-2">
+        <!-- ltn__header-middle-area start -->
+        <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black ltn__logo-right-menu-option plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="site-logo-wrap">
+                            <div class="site-logo">
+                                <a href=""><img src="/public/assets/img/carlogo-removebg-preview(1).png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support clearfix get-support-color-white">
+                                <div class="get-support-icon">
+                                    <i class="bi bi-telephone"></i>
+
+                                </div>
+                                <div class="get-support-info">
+                                    <h6>Get Support</h6>
+                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col header-menu-column menu-color-white">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul>
+                                        <li class=""><a href="/shop">Explore</a>
+                                          </li>
+                                          <li class=""><a href="/home">Home</a>
+                                          </li>
+                                        <li class=""><a href="/about">About</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/shop">Shop</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/about">News</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/shop">Feed</a>
+                                           
+                                        </li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        <li class="special-link"><a href="/appointment"> 757 AUTOMOTIVE</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ltn__header-options ltn__header-options-2">
+                        <!----- header-search-1 -->
+                        <div class="header-search-wrap">
+                            <div class="header-search-1">
+                                <div class="search-icon">
+                                    <i class="bi bi-search"></i>
+
+                                    <i class="icon-cancel  for-search-close"></i>
+                                </div>
+                            </div>
+                            <div class="header-search-1-form">
+                                <form id="#" method="get"  action="#">
+                                    <input type="text" name="search" value="" placeholder="Search here..."/>
+                                    <button type="submit">
+                                        <span><i class="icon-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- user-menu -->
+                        <div class="ltn__drop-menu user-menu">
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="bi bi-person-circle"></i>
+
+
+
+                                    </a>
+                                    <ul>
+                                        <!-- <li><a href="login.html">Sign in</a></li>
+                                        <li><a href="register.html">Register</a></li> -->
+                                        <!-- <li><a href="account.html">My Account</a></li> -->
+                                        <li><a href="/logout">log out
+                                          
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mini-cart -->
+                        <div class="mini-cart-icon">
+                            <a href="/cart" >
+                                <!-- Example usage of Bootstrap icons in EJS -->
+                                <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
+
+                                <sup>2</sup>
+                            </a>
+                        </div>
+                        <!-- mini-cart -->
+                        <!-- Mobile Menu Button -->
+                        <div class="mobile-menu-toggle d-xl-none">
+                            <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                <svg viewBox="0 0 800 600">
+                                    <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+                                    <path d="M300,320 L540,320" id="middle"></path>
+                                    <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- HEADER AREA END -->
+
+    <div class="wishlist-header">
+        <h2>Wishlist
+            
+        </h2>
+    </div>
+    <style>
+    
+    .wishlist-header {
+    background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
+    padding: 50px 20px 20px; /* Padding around the content */
+    border-bottom: 20px solid #848080; /* Bottom border */
+    
+        }
+
+    .wishlist-header h2 {
+    margin: 60px 10px 3px 20px; /* Remove default margin */
+    right: 20px;
+    font-size: 4; /* Font size */
+   
+    color: #ffffff; /* Text color */
+    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+
+    </style>
+
+<div class="liton__shoping-cart-area mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping-cart-inner">
+                    <div class="shoping-cart-table table-responsive">
+                        <% let totalSubTotal=0 %>
+                            <% if (wishlist.length> 0) { %>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+
+                                            <th class="cart-product-image"></th>
+                                            <th class="cart-product-info">Image</th>
+                                            <br>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-price"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove">Product</th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            <th class="cart-product-remove"></th>
+                                            
+                                            <th class="cart-product-remove">Price</th>
+                                            
+                                            <th class="cart-product-remove">Remove</th>
+                                          
+                                            <th class="cart-product-remove">Move to Cart</th>
+                                           
+                                           
+                                            <th class="cart-product-remove"></th>
+                                           
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <% for(let i=0; i < products.length; i++) { %>
+                                            <tr>
+
+                                                <td class="cart-product-image">
+                                                    <img
+                                                        src="/public/assetsNew/uploads/<%= products[i].image[0].filename %>">
+                                                </td>
+                                                <td class="cart-product-info">
+                                                    <h4><a href="product-details.html">
+                                                            <%= products[i].productName %>
+                                                        </a></h4>
+                                                </td>
+                                               
+                                               
+                                                </td>
+
+                                                <td class="cart-product-subtotal">
+                                                    <span id="subtotal<%= i %>">
+                                                        <%= (products[i].salePrice) %>
+                                                    </span>
+                                                </td>
+                                                <td class="cart-product-remove" data-title="Remove">
+                                                    <a class="text-danger"
+                                                        onclick="confirmDelete('<%= products[i]._id %>')">
+                                                        <span style="color: rgb(255, 0, 34); font-size: 24px;">&#10006;</span>
+
+                                                    </a>
+                                                </td>
+                                                <!--  -->
+                                                
+                                                <!--  -->
+                                                <td class="text-right" data-title="Cart">
+                                                    <button class="btn btn-sm custom-button"
+                                                        onclick="wishlistCart('/wishlistCart?id=<%= products[i]._id %>')">
+                                                        <i class="fi-rs-shopping-bag mr-5"></i>Add to cart
+                                                    </button>
+                                                </td>
+                                                
+                                            </tr>
+                                            <% totalSubTotal +=parseFloat(products[i].salePrice *
+                                                wishlist[i].quantity) %>
+                                                <% } %>
+                                                    <tr class="cart-coupon-row">
+                                                        <td colspan="6">
+                                                            <div class="cart-coupon">
+                                                                <!-- <input type="text" name="cart-coupon" placeholder="Coupon code">
+                                        <button type="submit" class="btn theme-btn-2 btn-effect-2">Apply Coupon</button>
+                                    </div> -->
+                                                        </td>
+                                                    </tr>
+                                    </tbody>
+                                </table>
+                                <% } else { %>
+                                    <div class="container mt-5">
+                                        <div class="text-center">
+                                            
+                                            
+                                            <p>Uh-oh! Your wishlist  is feeling a bit lonely.</p>
+                                            <p>Time to fill it up with amazing finds!</p>
+                                            <a href="/shop" class="btn btn-primary">Add to wishlist</a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <style>
+        .custom-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+    </style>
+
+
+    <!-- FOOTER AREA START (ltn__footer-2 ltn__footer-color-1) -->
+    <footer class="ltn__footer-area ltn__footer-2 ltn__footer-color-1">
+        <div class="footer-top-area  section-bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-5">
+                        <div class="footer-widget ltn__footer-timeline-widget ltn__footer-timeline-widget-1 bg-image bg-overlay-theme-black-90" data-bs-bg="img/bg/4.jpg">
+                            <h6 class="ltn__secondary-color text-uppercase">// time shedule</h6>
+                            <h4 class="footer-title">Meet In Timeline.</h4>
+                            <ul>
+                                <li>Monday <span>07:00AM - 20:00PM</span></li>
+                                <li>Tuesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Wednesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Thursday <span>07:00AM - 20:00PM</span></li>
+                                <li>Friday <span>07:00AM - 20:00PM</span></li>
+                                <li>Saturday <span>07:00AM - 20:00PM</span></li>
+                                <li>Sunday <span>Official Holiday</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-7">
+                        <div class="footer-widget footer-menu-widget footer-menu-widget-2-column clearfix">
+                            <h4 class="footer-title">Services.</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Engine Diagnostics</a></li>
+                                    <li><a href="service.html">Vehicles Damaged</a></li>
+                                    <li><a href="service.html">Air Conditioning Evac</a></li>
+                                    <li><a href="service.html">Anti Lock Brake Service</a></li>
+                                    <li><a href="service.html">Computer Diagnostics</a></li>
+                                    <li><a href="service.html">Performance Upgrades</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Car Wash & Cleaning</a></li>
+                                    <li><a href="service.html">Choose your Repairs</a></li>
+                                    <li><a href="service.html">Free Consultancy</a></li>
+                                    <li><a href="service.html">Emergency Time</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="footer-widget footer-blog-widget">
+                            <h4 class="footer-title">News Feeds.</h4>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ltn__copyright-area ltn__copyright-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="site-logo-wrap">
+                            <div class="site-logo">
+                                <a href="index.html"><img src="img/logo-2.png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support ltn__copyright-design clearfix">
+                                <div class="get-support-info">
+                                    <h6>Copyright & Design By</h6>
+                                    <h4>Company - <span class="current-year"></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 align-self-center">
+                        <div class="ltn__copyright-menu text-end">
+                            <ul>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Claim</a></li>
+                                <li><a href="#">Privacy & Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
+</div>
+
+<%- include('../layouts/homefooter.ejs') -%>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+
+
+
+    function wishlistCart(productId) {
+
+
+
+        $.ajax({
+            url: productId,
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify({ is_blocked: true }),
+            success: function () {
+
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Product added to cart!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "OUT OF STOCK",
+                });
+                console.error("Failed to block user", error);
+            },
+        });
+
+    }
+
+    function confirmDelete(itemId) {
+                    // Use SweetAlert for confirmation
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: 'You won\'t be able to revert this!',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If confirmed, send a Fetch request for deletion
+                            fetch('/delete-wishlist', {
+                                method: 'delete', // or 'DELETE' depending on your server implementation
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({ id: itemId }),
+                            })
+                                .then(response => {
+                                    if (response) {
+                                        // Optionally, handle the response
+
+                                        window.location.reload();
+                                    } else {
+                                        console.error('Failed to delete item');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error during fetch:', error);
+                                });
+                        } else {
+                            console.log("Deletion cancelled!");
+                        }
+                    });
+                }
+
+</script>

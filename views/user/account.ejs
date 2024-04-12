@@ -1,0 +1,1025 @@
+<%- include('../layouts/homeheader.ejs') -%>
+<div class="body-wrapper">
+
+
+    <header class="ltn__header-area ltn__header-4 ltn__header-6 ltn__header-transparent gradient-color-2">
+        <!-- ltn__header-top-area start -->
+        <div class="ltn__header-top-area top-area-color-white d-none plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="ltn__top-bar-menu">
+                            <ul>
+                                <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> info@webmail.com</a></li>
+                                <li><a href="locations.ejs"><i class="icon-placeholder"></i> 15/A, Nest Tower, NYC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-top-area end -->
+        <!-- ltn__header-middle-area start -->
+        <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black  ltn__logo-right-menu-option plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="site-logo-wrap">
+
+
+
+                            
+                            <div class="site-logo">
+                                <a href=""><img src="/public/assets/img/carlogo-removebg-preview(1).png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support clearfix get-support-color-white">
+                                <div class="get-support-icon">
+                                    <i class="bi bi-telephone"></i>
+
+                                </div>
+                                <div class="get-support-info">
+                                    <h6>Get Support</h6>
+                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col header-menu-column menu-color-white">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul>
+                                        <li class=""><a href="/shop">Explore</a>
+                                          </li>
+                                          <li class=""><a href="/home">Home</a>
+                                          </li>
+                                        <li class=""><a href="/about">About</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/shop">Shop</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/about">News</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/shop">Feed</a>
+                                           
+                                        </li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        <li class="special-link"><a href="/appointment"> 757 AUTOMOTIVE</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ltn__header-options ltn__header-options-2">
+                        <!----- header-search-1 -->
+                        <div class="header-search-wrap">
+                            <div class="header-search-1">
+                                <div class="search-icon">
+                                    <i class="bi bi-search"></i>
+
+                                    <i class="icon-cancel  for-search-close"></i>
+                                </div>
+                            </div>
+                            <div class="header-search-1-form">
+                                <form id="#" method="get"  action="#">
+                                    <input type="text" name="search" value="" placeholder="Search here..."/>
+                                    <button type="submit">
+                                        <span><i class="icon-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- user-menu -->
+                        <div class="ltn__drop-menu user-menu">
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="bi bi-person-circle"></i>
+
+
+
+                                    </a>
+                                    <ul>
+                                        <!-- <li><a href="login.html">Sign in</a></li>
+                                        <li><a href="register.html">Register</a></li> -->
+                                        <li><a href="/account">My Account</a></li>
+                                        <li><a href="/logout">log out
+                                          
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mini-cart -->
+                        <div class="mini-cart-icon">
+                            <a href="/cart" >
+                                <!-- Example usage of Bootstrap icons in EJS -->
+                                <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
+
+                                <sup>2</sup>
+                            </a>
+                        </div>
+                        <!-- mini-cart -->
+                        <!-- Mobile Menu Button -->
+                        <div class="mobile-menu-toggle d-xl-none">
+                            <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                <svg viewBox="0 0 800 600">
+                                    <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+                                    <path d="M300,320 L540,320" id="middle"></path>
+                                    <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- HEADER AREA END -->
+    
+    <!-- Utilize Cart Menu Start -->
+    <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
+        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+            <div class="ltn__utilize-menu-head">
+                <span class="ltn__utilize-menu-title">Cart</span>
+                <button class="ltn__utilize-close">×</button>
+            </div>
+            <div class="mini-cart-product-area ltn__scrollbar">
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/1.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">Wheel Bearing Retainer</a></h6>
+                        <span class="mini-cart-quantity">1 x $65.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/2.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">Brake Conversion Kit</a></h6>
+                        <span class="mini-cart-quantity">1 x $85.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/3.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">OE Replica Wheels</a></h6>
+                        <span class="mini-cart-quantity">1 x $92.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/4.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">Shock Mount Insulator</a></h6>
+                        <span class="mini-cart-quantity">1 x $68.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-cart-footer">
+                <div class="mini-cart-sub-total">
+                    <h5>Subtotal: <span>$310.00</span></h5>
+                </div>
+                <div class="btn-wrapper">
+                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                </div>
+                <p>Free Shipping on All Orders Over $100!</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Utilize Cart Menu End -->
+
+    <!-- Utilize Mobile Menu Start -->
+    <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
+        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+            <div class="ltn__utilize-menu-head">
+                <div class="site-logo">
+                    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+                </div>
+                <button class="ltn__utilize-close">×</button>
+            </div>
+            <div class="ltn__utilize-menu-search-form">
+                <form action="#">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="ltn__utilize-menu">
+                <ul>
+                    <li><a href="#">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Home Style - 01</a></li>
+                            <li><a href="index-2.html">Home Style - 02</a></li>
+                            <li><a href="index-3.html">Home Style - 03</a></li>
+                            <li><a href="index-4.html">Home Style - 04</a></li>
+                            <li><a href="index-5.html">Home Style - 05 <span class="menu-item-badge">video</span></a></li>
+                            <li><a href="index-6.html">Home Style - 06</a></li>
+                            <li><a href="index-7.html">Home Style - 07</a></li>
+                            <li><a href="index-8.html">Home Style - 08 <span class="menu-item-badge">Map</span></a></li>
+                            <li><a href="index-9.html">Home Style - 09</a></li>
+                            <li><a href="index-10.html">Home Style - 10</a></li>
+                            <li><a href="index-11.html">Home Style - 11</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a>
+                        <ul class="sub-menu">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="service.html">Services</a></li>
+                            <li><a href="service-details.html">Service Details</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="portfolio-2.html">Portfolio - 02</a></li>
+                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="team-details.html">Team Details</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="locations.html">Google Map Locations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="shop-grid.html">Shop Grid</a></li>
+                            <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
+                            <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                            <li><a href="product-details.html">Shop details </a></li>
+                            <li><a href="product-details-2.html">Shop details 02</a></li>
+                            <li><a href="shop-car-grid.html">Shop Car Grid</a></li>
+                            <li><a href="shop-car-left-sidebar.html">Shop Car Left sidebar</a></li>
+                            <li><a href="shop-car-right-sidebar.html">Shop Car right sidebar</a></li>
+                            <li><a href="product-details-3.html">Shop Car details </a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="order-tracking.html">Order Tracking</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                            <li><a href="login.html">Sign in</a></li>
+                            <li><a href="register.html">Register</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">News</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">News</a></li>
+                            <li><a href="blog-grid.html">News Grid</a></li>
+                            <li><a href="blog-left-sidebar.html">News Left sidebar</a></li>
+                            <li><a href="blog-right-sidebar.html">News Right sidebar</a></li>
+                            <li><a href="blog-details.html">News details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="service.html">Services</a></li>
+                            <li><a href="service-details.html">Service Details</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="portfolio-2.html">Portfolio - 02</a></li>
+                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="team-details.html">Team Details</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="history.html">History</a></li>
+                            <li><a href="appointment.html">Appointment</a></li>
+                            <li><a href="locations.html">Google Map Locations</a></li>
+                            <li><a href="404.html">404</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
+                <ul>
+                    <li>
+                        <a href="account.html" title="My Account">
+                            <span class="utilize-btn-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                            My Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="wishlist.html" title="Wishlist">
+                            <span class="utilize-btn-icon">
+                                <i class="far fa-heart"></i>
+                                <sup>3</sup>
+                            </span>
+                            Wishlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html" title="Shoping Cart">
+                            <span class="utilize-btn-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <sup>5</sup>
+                            </span>
+                            Shoping Cart
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ltn__social-media-2">
+                <ul>
+                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Utilize Mobile Menu End -->
+
+    <div class="ltn__utilize-overlay"></div>
+
+          <div class="wishlist-header">
+            <h2>My Account</h2>
+            <h1 class="section-title black-color">Welocome back,<%=user.username %></h1>
+        </div>
+        <style>
+        
+        .wishlist-header {
+        background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
+        padding: 50px 20px 20px; /* Padding around the content */
+        border-bottom: 20px solid #848080; /* Bottom border */
+        
+            }
+    
+        .wishlist-header h2 {
+        margin: 60px 10px 3px 20px; /* Remove default margin */
+        right: 20px;
+        font-size: 4; /* Font size */
+       
+        color: #ffffff; /* Text color */
+        
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+    
+    
+        </style>
+
+    <!-- WISHLIST AREA START -->
+    <div class="liton__wishlist-area pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- PRODUCT TAB AREA START -->
+                    <div class="ltn__product-tab-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="ltn__tab-menu-list mb-50">
+                                        <div class="nav">
+                                            <a class="active show" data-bs-toggle ="tab" href="#liton_tab_1_1">Dashboard <i class="fas fa-home"></i></a>
+                                            <a data-bs-toggle ="tab" href="#liton_tab_1_2">Orders <i class="fas fa-file-alt"></i></a>
+                                            <a data-bs-toggle ="tab" href="#liton_tab_1_3">My Account Details <i class="fas fa-arrow-down"></i></a>
+                                          
+                                            <a data-bs-toggle ="tab" href="#liton_tab_1_4">address <i class="fas fa-map-marker-alt"></i></a>
+                                            <a data-bs-toggle ="tab" href="#liton_tab_1_5">Add new Address <i class="fas fa-user"></i></a>
+                                            <a data-bs-toggle ="tab" href="#liton_tab_1_6">My Wallet <i class="fas"></i></a>
+                                            <a href="login.html">Logout <i class="fas fa-sign-out-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active show" id="liton_tab_1_1">
+                                            
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                                <p>Hello, <strong><%=user.username %></strong> (not <strong>You</strong>? <small><a href="/logout">Log out</a></small> )</p>
+                                                <p>From your account dashboard you can view your <span>recent orders</span>, manage your <span>shipping and billing addresses</span>, and <span>edit your password and account details</span>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="liton_tab_1_2">
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Order no:</th>
+                                                                <th>Product Name</th>
+                                                                <th>Date</th>
+                                                                <th>Total</th>
+                                                                <th>Action</th>
+                                                                <th>Details</th>
+                                                            </tr>
+                                                        </thead>
+                                                       <tbody>
+                                                        <% for (let i = 0; i < order.length; i++) { %>
+                                                        <tr>
+                                                            <td><%= i + 1 %></td>
+                                                          
+                                                            <td>&nbsp; Product (<%= order[i].products.length %>) </td>
+                                                            <td><%= order[i].createdOn.toLocaleDateString() %></td>
+                                                            <td>₹<%= order[i].totalPrice.toFixed(2) %></td>
+                                                            <td><%= order[i].status %></td>
+                                                            <td>
+                                                                <% if (order[i].status !== 'failed') { %>
+                                                                <a href="/orderDetails?id=<%= order[i]._id %>" class="btn-small d-block">View</a>
+                                                                <% } else { %>
+                                                                    <a href="/continuePayment?id=<%= order[i]._id %>" class="btn-small d-block">Continue Payment</a>                                                                        <button type="submit" class="btn-small d-block"></button>
+                                                                    </form>
+                                                                    
+                                                                <% } %>
+                                                            </td>
+                                                        </tr>
+                                                        <% } %> 
+                                                         </tbody>
+                                                         
+
+
+                                                         
+                                                    </table>
+                                                </div>
+                                                <!-- ====================================================================== -->
+                                                <div class="pagination">
+                                                    <% for(let i = 1; i <= totalPagesOrder; i++) { %>
+                                                        <a href="?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+                                                    <% } %>
+                                                </div>
+                                                
+                                                <div class="pagination">
+                                                    <% for(let i = 1; i <= totalPagesProducts; i++) { %>
+                                                        <a href="?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+                                                    <% } %>
+                                                </div>
+                                                
+                                                <style>
+                                                    .pagination {
+                                                        margin-top: 20px;
+                                                        text-align: center;
+                                                    }
+
+                                                    .pagination {
+                                                        margin-top: 20px;
+                                                        text-align: center;
+                                                    }
+
+                                                    .pagination a {
+                                                        display: inline-block;
+                                                        padding: 8px 16px;
+                                                        text-decoration: none;
+                                                        color: #333;
+                                                        border: 1px solid #ccc;
+                                                        margin-right: 5px;
+                                                    }
+
+                                                    .pagination a.active {
+                                                        background-color: #007bff;
+                                                        color: #fff;
+                                                        border-color: #007bff;
+                                                    }
+
+                                                </style>
+                                                <!-- ============================================================================ -->
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="liton_tab_1_3">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-4 learts-mb-30">
+                                                        <!-- Animated user picture -->
+                                                        <div class="user-picture">
+                                                            <!-- Add your animated user picture here -->
+                                                            <img src="/public/Screenshot 2024-04-06 110824.png" alt="User Picture">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 learts-mb-30">
+                                                        <div class="card border rounded">
+                                                            <div class="card-header bg-primary text-white">
+                                                                <h5 class="mb-0 inline-underline">Account Details</h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <p><strong>Name:</strong> <%=user.username%></p>
+                                                                        <p><strong>Email:</strong> <%=user.email%></p>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p><strong>Mobile no:</strong> <%=user.mobile%></p>
+                                                                        <p><strong>Password:</strong> ***********</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <a href="/editProfile?id=<%= user._id %>" class="btn btn-primary">Edit Profile</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tab-pane fade" id="liton_tab_1_4">
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                               
+                                                
+                                                <div class="row">
+                                                    
+                                                    <div class="col-md-6 col-12 learts-mb-30">
+                                                        <h4>Delivery Addresses. <small></small></h4>
+
+                                                        
+                                                        <!-- ----------------------- -->
+                                                        <div class="row">
+                                            
+                                                            <% if (address && address.length && typeof address !== "undefined") { %>
+                                                              <% for (let i = 0; i < address.length; i++) { %>
+                                                                <div class="col-lg-6">
+                                                                  <div class="card mb-3 mb-lg-0">
+                                                                    <div class="card-header">
+                                                                      <h5 class="mb-0">Billing Address</h5>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                      <address>
+                                                                       <strong><%= address[i].fullName %><br></strong> 
+                                                                        <%= address[i].mobile%><br>
+                                                                        <%= address[i].pinCode %><br>
+                                                                        <%= address[i].addressLine %>
+                                                                      <br>
+                                                                      <a href="/editAddress?id=<%= address[i]._id %>" class="btn-small">Edit</a>
+                                                                      ||
+                                                                      <!-- <a href="/deleteAddress?id=<%= address[i]._id %>"class="btn-small">delete</a> -->
+                                                                      <!-- <a onclick="deleteAddress('/deleteAddress?id=<%= address[i]._id %>')" class="btn-small">delete</a> -->
+                                                                      <a onclick="deleteAddress('<%= address[i]._id %>')" class="btn-small">delete</a>
+
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              <% } %>
+                                                            <% } else { %>
+                                                              <p>No addresses found.</p>
+                                                            <% } %>
+                                                          </div>
+                                                        <!-- ==================== -->
+                                                   <style>
+                                                    .user-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-picture img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* To make it circular */
+    border: 5px solid #ccc; /* Add a border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff; /* Primary color */
+}
+
+.card-footer {
+    background-color: #f8f9fa; /* Light gray */
+}
+
+                                                   </style>
+                                                        
+                                                        <!-- <h4><small><a href="#">Add new address</a> <br></small><a href="">Delete the address</a></h4> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- add address -->
+                                        <div class="tab-pane fade" id="liton_tab_1_5">
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                                <p>Add the requirements for the new address.</p>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Add New Address</h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                       
+       
+                                                        <form method="post" action="/addAddress" onclick="return validate() ">
+                                                            <div class="row">
+                                                                <!-- Full Name -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Full Name</h5></label>
+                                                                    <input required="" class="form-control square" name="fullName" id="fullName" type="text">
+                                                                    <p id="fullNameError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Mobile Number -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Mobile Number</h5></label>
+                                                                    <input required="" class="form-control square" name="mobile" id="mobile" type="text">
+                                                                    <p id="mobileError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Region -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Region</h5></label>
+                                                                    <input required="" class="form-control square" name="region" id="region" type="text">
+                                                                    <p id="regionError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Pincode -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Pincode</h5></label>
+                                                                    <input required="" class="form-control square" name="pinCode" id="pinCode" type="text">
+                                                                    <p id="pinCodeError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Address Line -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Flat, House no., Building, Company, Apartment</h5></label>
+                                                                    <input required="" class="form-control square" name="addressLine" id="addressLine" type="text">
+                                                                    <p id="addressLineError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Area, Street, Sector, Village -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Area, Street, Sector, Village</h5></label>
+                                                                    <input required="" class="form-control square" name="areaStreet" id="areaStreet" type="text">
+                                                                    <p id="areaStreetError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Landmark -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Landmark</h5></label>
+                                                                    <input required="" class="form-control square" name="landmark" id="landmark" type="text">
+                                                                    <p id="landmarkError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Town/City -->
+                                                                <div class="form-group col-md-6">
+                                                                    <label><h5>Town/City</h5></label>
+                                                                    <input required="" class="form-control square" name="townCity" id="townCity" type="text">
+                                                                    <p id="townCityError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- State -->
+                                                                <div class="form-group col-md-6">
+                                                                    <label><h5>State</h5></label>
+                                                                    <input required="" class="form-control square" name="state" id="state" type="text">
+                                                                    <p id="stateError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <!-- Address Type -->
+                                                                <div class="form-group col-md-12">
+                                                                    <label><h5>Address Type</h5></label>
+                                                                    <input required="" class="form-control square" name="addressType" id="addressType" type="text">
+                                                                    <p id="addressTypeError" style="color: red;"></p>
+                                                                </div>
+                                                                
+                                                                <div class="col-md-12">
+                                                                    <button type="submit" class="btn btn-fill-out submit" name="submit" value="Submit">Save</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- wallet -->
+
+
+                                        <div class="tab-pane fade" id="liton_tab_1_6">
+                                            
+                                              
+
+                                            <div class="container mt-5">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-md-8">
+                                                        <div class="card shadow">
+                                                            <div class="card-header bg-primary text-white">
+                                                                <h2 class="text-center mb-0">My Wallet</h2>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="card bg-light mb-3">
+                                                                            <div class="card-body">
+                                                                                <h5 class="card-title text-center text-primary">Wallet Balance</h5>
+                                                                                <div class="text-center">
+                                                                                    <p class="card-text font-weight-bold h3">⟨₹⟩<%= (wallet && wallet.balance !== null) ? wallet.balance : '0' %></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="card bg-light">
+                                                                            <div class="card-body">
+                                                                                <h5 class="card-title text-center text-primary">Wallet Details</h5>
+                                                                                <div class="transaction-history">
+                                                                                    <ul class="list-group">
+                                                                                        <% if (wallet && wallet.transactions && wallet.transactions.length > 0) { %>
+                                                                                            <% wallet.transactions.forEach(transaction => { %>
+                                                                                                <li class="list-group-item d-flex justify-content-between align-items-center <%= transaction.transactionType === 'debit' ? 'bg-danger' : 'bg-success' %> text-white">
+                                                                                                    <div><%= new Date(transaction.date).toLocaleDateString() %></div>
+                                                                                                    <div><%= transaction.transactionType %>(<%= transaction.reason %>)</div>
+                                                                                                    <div>⟨₹⟩<%= transaction.amount %></div>
+                                                                                                </li>
+                                                                                            <% }); %>
+                                                                                        <% } else { %>
+                                                                                            <li class="list-group-item text-center">No transactions found.</li>
+                                                                                        <% } %>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <style>
+                                                .transaction-history {
+                                                    max-height: 300px;
+                                                    overflow-y: auto;
+                                                }
+                                            </style>
+                                            
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PRODUCT TAB AREA END -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WISHLIST AREA START -->
+
+    <!-- FOOTER AREA START (ltn__footer-2 ltn__footer-color-1) -->
+    <footer class="ltn__footer-area ltn__footer-2 ltn__footer-color-1">
+        <div class="footer-top-area  section-bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-5">
+                        <div class="footer-widget ltn__footer-timeline-widget ltn__footer-timeline-widget-1 bg-image bg-overlay-theme-black-90" data-bs-bg="img/bg/4.jpg">
+                            <h6 class="ltn__secondary-color text-uppercase">// time shedule</h6>
+                            <h4 class="footer-title">Meet In Timeline.</h4>
+                            <ul>
+                                <li>Monday <span>07:00AM - 20:00PM</span></li>
+                                <li>Tuesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Wednesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Thursday <span>07:00AM - 20:00PM</span></li>
+                                <li>Friday <span>07:00AM - 20:00PM</span></li>
+                                <li>Saturday <span>07:00AM - 20:00PM</span></li>
+                                <li>Sunday <span>Official Holiday</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-7">
+                        <div class="footer-widget footer-menu-widget footer-menu-widget-2-column clearfix">
+                            <h4 class="footer-title">Services.</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Engine Diagnostics</a></li>
+                                    <li><a href="service.html">Vehicles Damaged</a></li>
+                                    <li><a href="service.html">Air Conditioning Evac</a></li>
+                                    <li><a href="service.html">Anti Lock Brake Service</a></li>
+                                    <li><a href="service.html">Computer Diagnostics</a></li>
+                                    <li><a href="service.html">Performance Upgrades</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Car Wash & Cleaning</a></li>
+                                    <li><a href="service.html">Choose your Repairs</a></li>
+                                    <li><a href="service.html">Free Consultancy</a></li>
+                                    <li><a href="service.html">Emergency Time</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="footer-widget footer-blog-widget">
+                            <h4 class="footer-title">News Feeds.</h4>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ltn__copyright-area ltn__copyright-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="site-logo-wrap">
+                            <div class="site-logo">
+                                <a href="index.html"><img src="img/logo-2.png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support ltn__copyright-design clearfix">
+                                <div class="get-support-info">
+                                    <h6>Copyright & Design By</h6>
+                                    <h4>Company - <span class="current-year"></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 align-self-center">
+                        <div class="ltn__copyright-menu text-end">
+                            <ul>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Claim</a></li>
+                                <li><a href="#">Privacy & Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
+</div>
+<!-- Body main wrapper end -->
+
+<%- include('../layouts/homefooter.ejs') -%>
+<!-- extras----- -->
+
+
+<script>
+ function validate() {
+  // Input fields
+  const fullName = document.getElementById("fullName");
+  const mobile = document.getElementById("mobile");
+  const pinCode = document.getElementById("pinCode");
+
+  // Error fields
+  const fullNameError = document.getElementById("fullNameError");
+  const mobileError = document.getElementById("mobileError");
+  const pinCodeError = document.getElementById("pinCodeError");
+
+  // Regex
+  const fullNameRegex = /^[A-Z]/;
+  const mobileRegex = /^[0-9]{10}$/;
+  const pinCodeRegex = /^\d{6}$/;
+  const allZerosRegex = /^0+$/;
+
+  // Full Name field
+  if (fullName.value.trim() === "") {
+    fullNameError.innerHTML = "Field is required";
+    setTimeout(() => {
+      fullNameError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+  if (!fullNameRegex.test(fullName.value)) {
+    fullNameError.innerHTML = "First letter should be capital";
+    setTimeout(() => {
+      fullNameError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+
+  // Mobile field
+  if (mobile.value.trim() === "") {
+    mobileError.innerHTML = "Field is required";
+    setTimeout(() => {
+      mobileError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+  if (!mobileRegex.test(mobile.value)) {
+    mobileError.innerHTML = "Please enter a valid number";
+    setTimeout(() => {
+      mobileError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+  //    all zero
+        if (allZerosRegex.test(mobile.value)){
+            mobileError.innerHTML='Please enter the valid number';
+        
+        setTimeout(()=> {
+            mobileError.innerHTML='';
+        },5000);
+        return false;
+    }
+
+  // Pin Code field
+  if (pinCode.value.trim() === "") {
+    pinCodeError.innerHTML = "Field is required";
+    setTimeout(() => {
+      pinCodeError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+  if (!pinCodeRegex.test(pinCode.value)) {
+    pinCodeError.innerHTML = "Please enter a valid pin code";
+    setTimeout(() => {
+      pinCodeError.innerHTML = "";
+    }, 5000);
+    return false;
+  }
+}
+
+
+    function deleteAddress(addressId) {
+        console.log("Deleting address:", addressId);
+        // Use fetch to send a DELETE request
+        fetch(`/deleteAddress?id=${addressId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // Reload the page or update the UI as needed
+            location.reload(); // This will reload the page, you can replace it with other actions
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+<style>
+    .pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination a.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+</style>

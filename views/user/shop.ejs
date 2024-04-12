@@ -1,0 +1,699 @@
+<%- include('../layouts/homeheader.ejs') -%>
+<div class="wrapper">
+
+    <!-- HEADER AREA START (header-4) -->
+    <header class="ltn__header-area ltn__header-4 ltn__header-transparent gradient-color-2">
+        <!-- ltn__header-middle-area start -->
+        <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black  ltn__logo-right-menu-option plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="site-logo-wrap">
+                                    
+                            <div class="site-logo">
+                                <a href=""><img src="/public/assets/img/carlogo-removebg-preview(1).png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support clearfix get-support-color-white">
+                                <div class="get-support-icon">
+                                    <i class="bi bi-telephone"></i>
+
+                                </div>
+                                <div class="get-support-info">
+                                    <h6>Get Support</h6>
+                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col header-menu-column menu-color-white">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul>
+                                        <li class=""><a href="/shop">Explore</a>
+                                          </li>
+                                          <li class=""><a href="/home">Home</a>
+                                          </li>
+                                        <li class=""><a href="/about">About</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="/shop">Shop</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="#">News</a>
+                                           
+                                        </li>
+                                        <li class=""><a href="#">Pages</a>
+                                           
+                                        </li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        <li class="special-link"><a href="/appointment">757 AUTOMOTIVE</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ltn__header-options ltn__header-options-2">
+                        <!----- header-search-1 -->
+                        <div class="header-search-wrap">
+                            <div class="header-search-1">
+                                <div class="search-icon">
+                                    <i class="bi bi-search"></i>
+
+                                    <i class="icon-cancel  for-search-close"></i>
+                                </div>
+                            </div>
+                            <div class="header-search-1-form">
+                                <form id="#" method="get"  action="#">
+                                    <input type="text" name="search" value="" placeholder="Search here..."/>
+                                    <button type="submit">
+                                        <span><i class="icon-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- user-menu -->
+                        <div class="ltn__drop-menu user-menu">
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="bi bi-person-circle"></i>
+
+
+
+                                    </a>
+                                    <ul>
+                                        <!-- <li><a href="login.html">Sign in</a></li>
+                                        <li><a href="register.html">Register</a></li> -->
+                                        <!-- <li><a href="account.html">My Account</a></li> -->
+                                        <li><a href="/logout">log out
+                                          
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mini-cart -->
+                        <div class="mini-cart-icon">
+                            <a href="/cart" >
+                                <!-- Example usage of Bootstrap icons in EJS -->
+                                <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
+
+                                <sup> <%= cartItemsCount %></sup>
+                            </a>
+                        </div>
+                        <!-- mini-cart -->
+                        <!-- Mobile Menu Button -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- HEADER AREA END -->
+    
+    <!-- Utilize Cart Menu Start -->
+    
+    <!-- Utilize Cart Menu End -->
+
+   
+    <!-- Utilize Mobile Menu End -->
+
+    <div class="ltn__utilize-overlay"></div>
+    <div class="ltn__utilize-overlay"></div>
+
+    <div class="wishlist-header">
+    <h2>Shop...</h2>
+    </div>
+
+    <style>
+    
+    .wishlist-header {
+    background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
+    padding: 30px 20px 20px; /* Padding around the content */
+    border-bottom: 20px solid #848080; /* Bottom border */
+    
+        }
+
+    .wishlist-header h2 {
+    margin: 130px 10px 3px 1300px; /* Remove default margin */
+    right: 20px;
+    font-size: 4; /* Font size */
+   
+    color: #ffffff; /* Text color */
+    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+
+    </style>
+    
+    <!-- PRODUCT DETAILS AREA START -->
+   
+    <div class="ltn__product-area ltn__product-gutter mb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="ltn__shop-options">
+                        <ul>
+                            <li>
+                                <div class="ltn__grid-list-tab-menu">
+                                    <div class="nav">
+                                        <a class="active show" data-bs-toggle="tab" href="#liton_product_grid">
+                                            <i class="fas fa-th-large"></i>
+                                        </a>
+                                        <a data-bs-toggle="tab" href="#liton_product_list">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="showing-product-number text-right">
+                                    <span>Showing results</span>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="liton_product_grid">
+                            <div class="ltn__product-tab-content-inner ltn__product-grid-view">
+                                <div class="row" id="productContainer">
+                                    <!-- Products will be dynamically generated here -->
+                                    <!-- Use EJS to loop through products -->
+                                    <% for(let i=0; i < products.length;i++) { %>
+                                        <div class="col-xl-4 col-sm-6 col-6 product-item">
+                                            <!-- Your product item content -->
+                                            <!-- Ensure that each product item has appropriate classes for filtering -->
+                                            <!-- Use EJS to dynamically insert product details -->
+                                            <div class="ltn__product-item ltn__product-item-3 text-center">
+                                                <a href="product-details?id=<%= products[i]._id %>">
+                                                    <div class="product-img">
+                                                        <img src="/public/assetsNew/uploads/<%= products[i].image[0].filename %>" alt="">
+                                                        <div class="product-badge">
+                                                            <ul>
+                                                                <li class="sale-badge">Sale price</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                
+                                                <!-- Other product details -->
+                                                <!-- Ensure appropriate class names for filtering -->
+                                                <h2><a href="shop-product-right.html"><%= products[i].productName %></a></h2>
+                                                <div class="product-info">
+                                                    <div class="product-ratting">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                            <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <h2 class="product-title"><a href="product-details"><%= products[i].productName %></a></h2>
+                                                    <div class="product-price">
+                                                        <% if (products[i].regularPrice === products[i].salePrice) { %>
+                                                            <span>₹<%= products[i].regularPrice %></span>
+                                                        <% } else { %>
+                                                            <span>₹<%= products[i].salePrice %></span>
+                                                            <del> ₹<%= products[i].regularPrice %></del>
+                                                           
+                                                        <% } %>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <!-- Category dropdown -->
+                    <div class="filter-box">
+                        <!-- Category dropdown -->
+                        <div class="dropdown">
+                            <!-- Dropdown toggle button -->
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </button>
+                            <!-- Dropdown menu -->
+                            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                <li><a class="dropdown-item" href="/shop">All</a></li>
+                                <% category.forEach(category => { %>
+                                <li><a class="dropdown-item" href="/shop?id=<%= category._id %>"><%= category.categoryName %></a></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                        
+                        <!-- Search input -->
+                        <div class="input-group">
+                            <input type="text" id="orderSearchInput" placeholder="Search..." class="form-control" oninput="handleSearch()">
+                        </div>
+                    
+                        <!-- Filter form -->
+                        <div>
+                            <h4>Product Filter</h4>
+                            <form action="/shop" method="get">
+                                <!-- Price Range Filter -->
+                                <div class="form-group">
+                                    <label><b>Price Range:</b></label>
+                                    <select name="priceRange" class="form-control">
+                                        <option value="0-1000">0-1000</option>
+                                        <option value="1001-1999">1001-1999</option>
+                                        <option value="2000-5000">2000-5000</option>
+                                        <option value="1000-9000">1000-9000</option>
+                                    </select>
+                                </div>
+                                   <!-- Sorting options -->
+                                <div class="form-group">
+                                    <label><b>Sort By Price:</b></label>
+                                    <div class="btn-group" role="group" aria-label="Sort By Price">
+                                        <button type="submit" class="btn btn-primary" name="sortByPrice" value="lowToHigh">Low to High</button>
+                                        <button type="submit" class="btn btn-primary" name="sortByPrice" value="highToLow">High to Low</button>
+                                    </div>
+                                </div>
+ 
+                                <button type="submit" class="btn btn-primary">Filter</button>
+                            </form>
+                           
+            
+                        </div>
+                      
+                    
+                    
+                </div>
+                </div>
+                
+                
+
+         
+                
+                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0 text-center"> <!-- Add 'text-center' class to center the pagination -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center"> <!-- Add 'justify-content-center' class to center the pagination items -->
+                            <% for( let i=0; i < totalNumberOfPages; i++ ) { %>
+                                <li class="page-item <%= i == page ? 'active' : '' %>">
+                                    <a class="page-link" href="/shop?page=<%= i %>">
+                                        <%= i+1 %>
+                                    </a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </nav>
+                </div>
+                
+               
+            </div>
+         
+        </div>
+      
+    </div>
+</div>
+
+    <!-- PRODUCT DETAILS AREA END -->
+
+    <!-- Pagination buttons -->
+
+
+    
+
+
+    <!-- FOOTER AREA START (ltn__footer-2 ltn__footer-color-1) -->
+    <footer class="ltn__footer-area ltn__footer-2 ltn__footer-color-1">
+        <div class="footer-top-area  section-bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-5">
+                        <div class="footer-widget ltn__footer-timeline-widget ltn__footer-timeline-widget-1 bg-image bg-overlay-theme-black-90" data-bs-bg="img/bg/4.jpg">
+                            <h6 class="ltn__secondary-color text-uppercase">// time shedule</h6>
+                            <h4 class="footer-title">Meet In Timeline.</h4>
+                            <ul>
+                                <li>Monday <span>07:00AM - 20:00PM</span></li>
+                                <li>Tuesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Wednesday <span>07:00AM - 20:00PM</span></li>
+                                <li>Thursday <span>07:00AM - 20:00PM</span></li>
+                                <li>Friday <span>07:00AM - 20:00PM</span></li>
+                                <li>Saturday <span>07:00AM - 20:00PM</span></li>
+                                <li>Sunday <span>Official Holiday</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-7">
+                        <div class="footer-widget footer-menu-widget footer-menu-widget-2-column clearfix">
+                            <h4 class="footer-title">Services.</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Engine Diagnostics</a></li>
+                                    <li><a href="service.html">Vehicles Damaged</a></li>
+                                    <li><a href="service.html">Air Conditioning Evac</a></li>
+                                    <li><a href="service.html">Anti Lock Brake Service</a></li>
+                                    <li><a href="service.html">Computer Diagnostics</a></li>
+                                    <li><a href="service.html">Performance Upgrades</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="service.html">Car Wash & Cleaning</a></li>
+                                    <li><a href="service.html">Choose your Repairs</a></li>
+                                    <li><a href="service.html">Free Consultancy</a></li>
+                                    <li><a href="service.html">Emergency Time</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="footer-widget footer-blog-widget">
+                            <h4 class="footer-title">News Feeds.</h4>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                            <div class="ltn__footer-blog-item">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020</li>
+                                    </ul>
+                                </div>
+                                <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                    deals with the normal.</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ltn__copyright-area ltn__copyright-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="site-logo-wrap">
+                            <div class="site-logo">
+                                <a href="index.html"><img src="img/logo-2.png" alt="Logo"></a>
+                            </div>
+                            <div class="get-support ltn__copyright-design clearfix">
+                                <div class="get-support-info">
+                                    <h6>Copyright & Design By</h6>
+                                    <h4>Company - <span class="current-year"></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 align-self-center">
+                        <div class="ltn__copyright-menu text-end">
+                            <ul>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Claim</a></li>
+                                <li><a href="#">Privacy & Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
+
+    <!-- MODAL AREA START (Quick View Modal) -->
+    
+  
+
+</div>
+<!-- Body main wrapper end -->
+
+<%- include('../layouts/homefooter.ejs') -%>
+
+<script>
+
+
+    // function getfilteredproduct(){
+
+    //      const selectedCategory = document.getElementById("sortCategory").value
+    //     //  console.log(category);
+    //      const data = { category: selectedCategory }
+
+    //      $.ajax({
+    //         type: 'POST',
+    //         url: '/filter', // Adjust the URL according to your backend route
+    //         data: JSON.stringify(data), // Send data as JSON string
+    //         contentType: 'application/json', // Set content type to JSON
+    //         success: function (response) {
+    //             // Update the UI to display filtered products
+    //             // For example, update the product list with the filtered results
+    //             updateProductList(response);
+    //         },
+    //         error: function (xhr, status, error) {
+    //             console.error("Error fetching filtered products:", error);
+    //             // Handle error condition, display an error message, etc.
+    //         }
+    //     });
+   
+    // }
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const sortSelect = document.getElementById("sortSelect");
+    //     const productContainer = document.getElementById("productContainer");
+    //     // const products = <%= JSON.stringify(products) %>; // Ensure 'products' array is available in the template
+
+    //     // Function to render products
+    //     function renderProducts(products) {
+    //         productContainer.innerHTML = ''; // Clear previous products
+    //         products.forEach(product => {
+    //             // Render product HTML here
+    //             const productHTML = `
+    //                 <!-- Product HTML -->
+    //                 <div class="col-xl-4 col-sm-6 col-6 product-item">
+    //                     <!-- Product details -->
+    //                 </div>
+    //             `;
+    //             productContainer.insertAdjacentHTML('beforeend', productHTML);
+    //         });
+    //     }
+
+    //     // Event listener for sort select change
+    //     sortSelect.addEventListener("change", function () {
+    //         const sortCriteria = this.value;
+    //         let sortedProducts = [...products]; // Copy original products array
+
+    //        
+    //          if (sortCriteria === "lowToHigh") {
+    //             // Sort by price: low to high
+    //             sortedProducts.sort((a, b) => {
+    //                 return a.salePrice - b.salePrice;
+    //             });
+    //         } else if (sortCriteria === "highToLow") {
+    //             // Sort by price: high to low
+    //             sortedProducts.sort((a, b) => {
+    //                 return b.salePrice - a.salePrice;
+    //             });
+    //         } else {
+    //             // Default sorting (no sorting)
+    //         }
+
+    //         // Render sorted products
+    //         renderProducts(sortedProducts);
+    //     });
+    // });
+</script>
+<script>
+    let currentPage = 1; // Initialize current page
+const limitPerPage = 2; // Number of products per page
+
+// Function to fetch products for the specified page
+function fetchProducts(page) {
+    // Make AJAX request to fetch products for the given page
+    fetch(`/admin/products?page=${page}&limit=${limitPerPage}`)
+        .then(response => response.json())
+        .then(data => {
+            // Update the product grid with the new set of products
+            renderProducts(data.products);
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
+}
+
+// Function to render products in the product grid
+function renderProducts(products) {
+    const productContainer = document.getElementById('productContainer');
+    productContainer.innerHTML = ''; // Clear existing products
+
+    products.forEach(product => {
+        // Create HTML elements for each product
+        const productElement = document.createElement('div');
+        productElement.classList.add('product-item');
+        productElement.innerHTML = `
+            <h3>${product.productName}</h3>
+            <!-- Add more product details as needed -->
+        `;
+        productContainer.appendChild(productElement);
+    });
+}
+
+// Event listener for next page button
+document.getElementById('nextPageButton').addEventListener('click', () => {
+    currentPage++; // Increment current page
+    fetchProducts(currentPage); // Fetch products for the next page
+});
+
+// Event listener for previous page button
+document.getElementById('prevPageButton').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--; // Decrement current page
+        fetchProducts(currentPage); // Fetch products for the previous page
+    }
+});
+
+// Initial fetch to load products for the first page
+fetchProducts(currentPage);
+
+</script>
+<script>
+    
+    function handleSearch() {
+        // Get the value entered by the user
+        const searchValue = document.getElementById("orderSearchInput").value.toLowerCase();
+
+        // Get all product items
+        const productItems = document.querySelectorAll(".product-item");
+
+        // Loop through each product item and hide/show based on the search value
+        productItems.forEach(item => {
+            const productName = item.querySelector("h2 a").textContent.trim().toLowerCase();
+            // Within each iteration, it finds the <h2> element within the current item, then selects the <a> element inside the <h2> element.
+                //  It retrieves the text content of this <a> element using textContent. .trim() removes any leading or trailing white spaces
+
+            // Check if the search value matches the product name
+            if (productName.includes(searchValue)) {
+                item.style.display = ""; // Show the product item
+            } else {
+                item.style.display = "none"; // Hide the product item
+            }
+        });
+    }
+</script>
+
+<script>
+    // const products = [
+    //     { name: 'Product 1', price: 30 },
+    //     { name: 'Product 2', price: 70 },
+    //     { name: 'Product 3', price: 150 },
+    //     // Add more products as needed
+    // ];
+
+    // function filterProducts() {
+    //     const priceRange = document.getElementById('priceRange').value;
+    //     const [minPrice, maxPrice] = priceRange.split('-').map(Number);
+
+    //     const filteredProducts = products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+    //     renderProducts(filteredProducts);
+    // }
+
+    // function renderProducts(filteredProducts) {
+    //     const productsContainer = document.getElementById('products');
+    //     productsContainer.innerHTML = '';
+
+    //     if (filteredProducts.length === 0) {
+    //         productsContainer.innerHTML = '<p>No products found in the selected price range.</p>';
+    //     } else {
+    //         const ul = document.createElement('ul');
+    //         filteredProducts.forEach(product => {
+    //             const li = document.createElement('li');
+    //             li.textContent = `${product.name} - ${product.price}`;
+    //             ul.appendChild(li);
+    //         });
+    //         productsContainer.appendChild(ul);
+    //     }
+    // }
+
+    // // Initial rendering
+    // filterProducts();
+</script>
+<!-- Add this CSS in your HTML file or link to an external CSS file -->
+<style>
+    /* Styling for the filter box */
+    .filter-box {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        position: absolute; /* Position absolute for moving */
+        top: 20px; /* Adjust top position as needed */
+        right: 20px; /* Move to the right */
+    }
+
+    /* Styling for category dropdown */
+    .dropdown-toggle {
+        background-color: #ff7f50;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-weight: bold;
+        border: none;
+    }
+    .dropdown-menu {
+        border: none;
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-item {
+        color: #333;
+    }
+
+    /* Styling for search input */
+    .input-group {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #orderSearchInput {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    /* Styling for filter form */
+    h4 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-control {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    button[type="submit"] {
+        background-color: #ff7f50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px; /* Reduced button size */
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>

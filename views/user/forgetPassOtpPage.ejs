@@ -1,0 +1,141 @@
+<%- include('../layouts/Header.ejs') -%>
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+    
+        <div class="card-header">
+            <div id="otp-verification-container">
+                <h2 class="text-center underline">OTP Verification</h2>
+            </div>
+        </div>
+        <div class="card-body">
+            <br><br>
+            <p class="text-center"></p>
+            <form action="/ForgetPassVerifyOtp" method="post" onsubmit="return validate()">
+                <div class="form-group">
+                    <br>
+                    <label for="otp" class="text-center">Please enter the OTP sent to your email:</label>
+                    <input type="text" class="form-control mx-auto" id="formOtp" name="otpCode" required>
+                    <p id="otpError" class="text-center" style="color: red;"></p>
+                    <% if (typeof message !=='undefined' ) { %>
+                        <p class="error-message text-center" style="color: red;">
+                            <%= message %>
+                        </p>
+                    <% } %>
+                    <div class="invalid-feedback text-center"></div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Verify OTP</button>
+            </form>
+            <div class="row" >
+                <!-- <div class="col-auto text-center" id="timeoutDisplay">
+                    <p>Time remaining: <span class="p-2" id="divCounter">02:00</span></p>
+                </div>
+                <div class="col-auto text-center" id="afterTimeoutDisplay">
+                    <p>Don't receive the code?</p>
+                </div> -->
+                <!-- <div id="resendOtp" class="flex-col-c p-t-20 p-b-20 col-auto">
+                    <a href="" class="txt3 text-center" onclick=" resendOtp()">Resend OTP</a>
+                </div> -->
+            </div>
+            
+            
+            <br /><br />
+        </div>
+    </div>
+</div>
+
+
+
+        <script>
+            var test = 20;
+            var value;
+            var interval;
+            var hasTimerExpired = false;
+
+            // Function to start or resume the timer
+            function startTimer() {
+                if (sessionStorage.getItem("counter2") && !hasTimerExpired) {
+                    value = parseInt(sessionStorage.getItem("counter2"));
+                } else {
+                    value = test;
+                }
+
+                $("#divCounter").text(value);
+
+                interval = setInterval(function () {
+                    counter2();
+                }, 1000);
+            }
+
+            function counter2() {
+                if (value === 0 && !hasTimerExpired) {
+                    clearInterval(interval);
+                    // Update UI elements and disable input
+                    document.getElementById("timeoutDisplay").style.display = "none";
+                    document.getElementById("afterTimeoutDisplay").style.display = "block";
+                    document.getElementById("resendOtp").style.display = "block";
+                    document.getElementById("inputOtp").disabled = true;
+                    hasTimerExpired = true;
+                } else {
+                    value = value - 1;
+                    sessionStorage.setItem("counter2", value);
+                }
+
+                var minutes = Math.floor(value / 60);
+                var seconds = value % 60;
+                if (minutes < 10) minutes = "0" + minutes;
+                if (seconds < 10) seconds = "0" + seconds;
+                $("#divCounter").text(minutes + ":" + seconds);
+            }
+
+            // Function to restart the timer (only for resend OTP)
+            function restartTimer() {
+                clearInterval(interval);
+                hasTimerExpired = false; // Reset expiration flag
+                sessionStorage.removeItem("counter2");
+                startTimer();
+            }
+
+            // Function to resend OTP
+        // Function to resend OTP and restart timer
+        function resendOtp() {
+            // Display the resend OTP section
+            document.getElementById("resendOtp").style.display = "block";
+            console.log("ddddd");
+            // Simulate OTP resend (replace with actual logic)
+            fetch("/resendOtp", {
+                method: "GET",
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then((data) => {
+                if (data.success) {
+                    // Show success message (replace with your preferred method)
+                    toastr.success("OTP resend successful");
+                }
+            });
+
+            // Restart the timer
+            restartTimer();
+        }
+
+        // Function to restart the timer
+        function restartTimer() {
+            // Clear previous interval
+            clearInterval(interval);
+
+            // Reset expiration flag
+            hasTimerExpired = false;
+
+            // Remove stored counter value
+            sessionStorage.removeItem("counter2");
+
+            // Start the timer again
+            startTimer();
+        }
+
+</script>
+
+
+<%- include('../layouts/footer.ejs') -%>

@@ -1,0 +1,57 @@
+<%- include("../layouts/admin/header")%>
+
+<section class="content-main">
+    <div class="card mb-4">
+        <header class="card-header">
+            <h2>Best Selling Categories</h2>
+        </header> <!-- card-header end// -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="bestSellingCategories" class="display">
+                    <thead>
+                        <tr>
+                            <th>Category ID</th>
+                            <th>Category Name</th>
+                            <th>Total Quantity Sold</th>
+                        </tr>
+                    </thead>
+                    <% bestSellingCategory.forEach(category => { %>
+                    <tr>
+                        <td><%= category.categoryId %></td>
+                        <td><%= category.categoryName %></td>
+                        <td><%= category.totalQuantity %></td>
+                    </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div> <!-- card-body end// -->
+    </div> <!-- card end// -->
+</section>
+
+<footer class="main-footer font-xs">
+    <div class="row pb-30 pt-15">
+</div>
+</div>
+</footer>
+</main>
+
+<style>
+    #bestSellingCategories {
+width: 100%;
+border-collapse: collapse;
+}
+
+#bestSellingCategories th,
+#bestSellingCategories td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+#bestSellingCategories th {
+background-color: #f2f2f2;
+}
+
+</style>
+
+<%- include("../layouts/admin/footer")%>

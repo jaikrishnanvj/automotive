@@ -1,0 +1,59 @@
+<%- include("../layouts/admin/header")%>
+
+        
+       
+        
+    <section class="content-main">
+        <div class="card mb-4">
+            <header class="card-header">
+                <h2>Best selling Products</h2>
+
+            </header> <!-- card-header end// -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="bestSellingProducts" class="display">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Quantity Sold</th>
+                            </tr>
+                        </thead>
+                        <% bestSellingProducts.forEach(product => { %>
+                        <tr>
+                            <td><%= product._id %></td>
+                            <td><%= product.productName %></td> <!-- Use productTitle instead of productName -->
+                            <td><%= product.totalQuantity %></td> <!-- Use totalQuantity instead of Quantity -->
+                        </tr>
+                        <% }) %>
+                        </table>
+                        </div>
+                    </div> <!-- card-body end// -->
+                </div> <!-- card end// -->
+            </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+     <div class="row pb-30 pt-15">
+ </div>
+</div>
+</footer>
+</main>
+
+<style>
+    #bestSellingProducts {
+width: 100%;
+border-collapse: collapse;
+}
+
+#bestSellingProducts th,
+#bestSellingProducts td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+#bestSellingProducts th {
+background-color: #f2f2f2;
+}
+
+</style>
+<%- include("../layouts/admin/footer")%>

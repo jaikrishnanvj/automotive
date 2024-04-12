@@ -1,0 +1,180 @@
+
+<%- include("../layouts/admin/header")%>
+<!--  -->
+
+                <section class="content-main">
+                    <div class="content-header">
+                        <div>
+                            <h2 class="content-title card-title">Order List </h2>
+
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Search order ID" class="form-control bg-white">
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <header class="card-header">
+                            <div class="row gx-3">
+                                <div class="col-lg-4 col-md-6 me-auto">
+                                    <input type="text" placeholder="Search..." class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-6 col-md-3">
+                                    <select class="form-select" onchange="redirectToStatus(this)">
+
+                                        <option value="" disabled selected>Status</option>
+                                        <option value="All">All Status</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                        <option value="Shipped">Shipped</option>
+                                        <option value="Pending">Pending</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-6 col-md-3">
+                                    <select class="form-select" onchange="orderPerPage(this)">
+                                        <option value="" disabled selected>show</option>
+                                        <option value="All">Show All</option>
+                                        <option value="10">Show 10</option>
+                                        <option value="20">Show 20</option>
+                                        <option value="30">Show 30</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </header> <!-- card-header end// -->
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Payment</th>
+                                            <th scope="col" class="text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for( let i=0; i < orders.length; i++ ) { %>
+                                            <% let order=orders[i] %>
+
+                                                <tr>
+                                                    <td><a href="#" class="fw-bold">#<%= order._id %></a></td>
+                                                    <% if (order.user) { %>
+                                                        <td>
+                                                            <%= order.user.name %>
+                                                        </td>
+                                                        <% } else { %>
+                                                            <td>User not available</td>
+                                                            <% } %>
+                                                                <td>
+                                                                    <%= order.createdOn.toDateString() %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= order.totalPrice %>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge badge-pill 
+                                                <% if (order.status === 'Cancelled') { %>
+                                                    badge-soft-danger
+                                               
+                                                <% } else { %>
+                                                    badge-soft-success
+                                                <% } %>
+                                                ">
+                                                                        <%= order.status %>
+                                                                    </span>
+                                                                </td>
+                                                                <td><i
+                                                                        class="material-icons md-payment font-xxl text-muted mr-5"></i>
+                                                                    <%= order.payment %>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a href="/admin/order-details/?id=<%= order._id %>"
+                                                                        class="btn btn-xs">View details</a>
+                                                                </td>
+                                                </tr>
+
+                                                <% } %>
+                                    </tbody>
+                                </table>
+
+                            </div> <!-- table-responsive //end -->
+                        </div> <!-- card-body end// -->
+                    </div> <!-- card end// -->
+                    <!-- Add this pagination block after your table -->
+                    <div class="pagination-area mt-15 mb-50">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                                <% for (let i=1; i <=totalPages; i++) { %>
+                                    <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                                        <a class="page-link" href="?page=<%= i %>">
+                                            <%= i %>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section> <!-- content-main end// -->
+                <footer class="main-footer font-xs">
+                    <div class="row pb-30 pt-15">
+                        <div class="col-sm-6">
+                            <script data-cfasync="false"
+                                src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> ©, Evara - HTML Ecommerce Template .
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end">
+                                All rights reserved
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        </main>
+
+        <script>
+            // This function gets triggered when the dropdown selection changes
+            function redirectToStatus(select) {
+                // Get the selected value from the dropdown
+                var status = select.value;
+
+                // Check if the selected status is empty
+                if (status === "All") {
+                    // If it's empty, navigate to "/admin/orderDetails"
+                    window.location.href = "/admin/orderDetails";
+                } else {
+                    // If a status is selected, navigate to "/admin/orderDetails?id=" + status
+                    window.location.href = "/admin/orderDetails?status=" + status;
+                }
+            }
+
+
+
+
+
+            // sort by orders per page
+            function orderPerPage(select) {
+                const ordersPerPage = select.value;
+
+                if (ordersPerPage === "All")
+                    window.location.href = "/admin/orderDetails";
+                else
+                    window.location.href =
+                        "/admin/orderDetails?OrderPerPage=" + ordersPerPage;
+            }
+        </script>
+
+        <script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/vendors/select2.min.js"></script>
+        <script src="assets/js/vendors/perfect-scrollbar.js"></script>
+        <script src="assets/js/vendors/jquery.fullscreen.min.js"></script>
+        <!-- Main Script -->
+        <script src="assets/js/main.js" type="text/javascript"></script>
+       
+<%- include("../layouts/admin/footer")%>

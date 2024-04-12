@@ -1,0 +1,208 @@
+<%- include('../layouts/Header.ejs') -%>
+<div class="bg text-black" id="error-message-container"><%=message%></div>
+
+<div class="container" id="container">
+  <div class="form-container sign-up">
+
+   
+    <form id="registrationForm" action="/register" method="post" onsubmit="return validate()">
+      <h1>Create Account</h1>
+      
+      
+
+      <div class="form-group">
+          <input type="text" id="username" name="username" placeholder="Username">
+          <p id="nameError"></p>
+      </div>
+      <div class="form-group">
+          <input type="text" id="email" name="email" placeholder="Email">
+          <p id="emailError"></p>
+      </div>
+      <div class="form-group">
+          <input type="password" id="password" name="password" placeholder="Password">
+          <p id="passwordError"></p>
+      </div>
+      <div class="form-group">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password">
+          <p id="confirmPasswordError"></p>
+      </div>
+      <div class="form-group">
+         <input type="Number" id="mobile" name="mobile" placeholder="Enter your Mobile number">
+         <p id="mobileError"></p>
+     </div>
+      <button type="submit">Sign Up</button>
+      <!-- <% if (typeof message !== 'undefined') { %>
+         <h4><%= message %></h4>
+      <% } %> -->
+  </form>
+  
+  </div>
+  <div class="form-container sign-in">
+      <form method="post" action="/login">
+          <h1>Log In</h1>
+          <div class="social-icons">
+          </div>
+     
+          <input type="email"  name="email" placeholder="Email">
+          <input type="password" name="pass" placeholder="Password">
+          <div class="form-group text-center">
+            <a class="text-muted" href="/forgetPasswordEmail">Forgot password?</a>
+        </div>
+
+          
+          <button type="submit">Log In</button>
+      </form>
+  </div>
+  <div class="toggle-container">
+      <div class="toggle">
+          <div class="toggle-panel toggle-left">
+              <h1>Register Now!</h1>
+              <p>Enter your personal details to use all of site features</p>
+              <button class="hidden" id="login">Log In</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+              <h1>Welcome, Friend!.</h1>
+              <p>Enter your personal details to use all of site features</p>
+              <button class="hidden" id="register"></a>Sign Up</button>
+          </div>
+      </div>
+  </div>
+</div>
+<script>
+   function validate() {
+       // Input fields
+       const name = document.getElementById('username');
+       const email = document.getElementById('email');
+       const password = document.getElementById('password');
+       const confirmPassword = document.getElementById('confirmPassword');
+       const mobile = document.getElementById('mobile');
+
+       // Error fields
+       const nameError = document.getElementById('nameError');
+       const emailError = document.getElementById('emailError');
+       const passwordError = document.getElementById('passwordError');
+       const confirmPasswordError = document.getElementById('confirmPasswordError');
+       const mobileError = document.getElementById('mobileError');
+
+       // Regular expressions
+       const nameRegex = /^[A-Z]/;
+       const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail+\.[a-zA-Z]{3}$/;
+       const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+       const mobileRegex = /^\d{10}$/;
+       const allZerosRegex = /^0+$/;
+
+       // Name field
+       if (name.value.trim() === '') {
+           nameError.innerHTML = 'Field is required';
+           setTimeout(() => {
+               nameError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+       if (!nameRegex.test(name.value)) {
+           nameError.innerHTML = 'First letter should be capital';
+           setTimeout(() => {
+               nameError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+
+       // Email field
+       if (email.value.trim() === '') {
+           emailError.innerHTML = 'Field is required';
+           setTimeout(() => {
+               emailError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+       if (!emailRegex.test(email.value)) {
+           emailError.innerHTML = 'Please enter a valid email';
+           setTimeout(() => {
+               emailError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+
+       // Password field
+       if (password.value.trim() === '') {
+           passwordError.innerHTML = 'Field is required';
+           setTimeout(() => {
+               passwordError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+       if (!passwordRegex.test(password.value)) {
+           passwordError.innerHTML = 'Enter a Proper password ';
+           setTimeout(() => {
+               passwordError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+
+       // Confirm password field
+       if (confirmPassword.value.trim() === '') {
+           confirmPasswordError.innerHTML = 'Field is required';
+           setTimeout(() => {
+               confirmPasswordError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+       if (password.value !== confirmPassword.value) {
+           confirmPasswordError.innerHTML = 'Passwords do not match';
+           setTimeout(() => {
+               confirmPasswordError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+
+       // Mobile field
+       if (mobile.value.trim() === '') {
+           mobileError.innerHTML = 'Mobile number Must be entered';
+           setTimeout(() => {
+               mobileError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+    //    all zero
+        if (allZerosRegex.test(mobile.value)){
+            mobileError.innerHTML='Please enter the valid number';
+        
+        setTimeout(()=> {
+            mobileError.innerHTML='';
+        },5000);
+        return false;
+    }
+    
+
+       if (!mobileRegex.test(mobile.value)) {
+           mobileError.innerHTML = 'Please enter a valid number';
+           setTimeout(() => {
+               mobileError.innerHTML = '';
+           }, 5000);
+           return false;
+       }
+
+       return true;
+   
+  
+   }
+
+
+</script>
+
+<%- include('../layouts/footer.ejs') -%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Get the error message container
+    const errorMessageContainer = document.getElementById('error-message-container');
+  
+    // Function to remove the error message after 5 seconds
+    const removeErrorMessage = () => {
+      errorMessageContainer.style.display = 'none'; // Hide the container
+    };
+  
+    // Add an event listener to trigger the removal after 5 seconds
+    setTimeout(removeErrorMessage, 5000); // 5000 milliseconds = 5 seconds
+  </script>

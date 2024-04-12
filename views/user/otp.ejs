@@ -1,0 +1,102 @@
+<%- include('../layouts/Header.ejs') -%>
+
+
+
+      <!-- current -->
+      <div class="container" id="container">
+
+        <div class="form-container sign-in">
+            <form
+            action="/otp"
+            method="POST"
+            class="login100-form validate-form p-l-55 p-r-55 p-t-178"
+            
+          >
+          <div id="timeoutDisplay"></div>
+
+            <span class="l">Enter your OTP </span>
+          
+           
+          
+            <div id="message" class="text-center error m-b-16"></div>
+          
+            <div
+              class="wrap-input100 validate-input m-b-16"
+              data-validate="Please enter OTP"
+            >
+              <input
+                class="input100"type="number"name="otp"placeholder="Enter OTP Here"id="inputOtp"required/>
+              <span id="error-otp"></span>
+              <span class="focus-input100"></span>
+            </div>
+          
+            <div class="container-login100-form-btn">
+              <button type="submit" class="login100-form-btn" > Verify</button>
+            </div>
+            <div class="row">
+              <div id="resendOtp" class="flex-col-c p-t-20 p-b-20 col-auto" style="display: none;">                <br>
+                <a href="/resendOtp" class="txt3">
+                Resend OTP
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-col-c p-t-8 p-b-40">
+                <br><br>
+                <div id="timeoutDisplay"></div>
+
+                <br><br>
+
+              <a href="/login" class="txt3"><span>Back to login</span></a>
+            </div>
+          </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                   
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Log In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Check your Mail</h1>
+                    <p>Do not share your one time password to any strangers</p>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    
+<script>
+  // Function to update countdown timer
+  function updateCountdown() {
+    const timeoutDisplay = document.getElementById('timeoutDisplay');
+    let remainingTime = parseInt(timeoutDisplay.dataset.time);
+
+    if (remainingTime > 0) {
+      timeoutDisplay.textContent = `Please wait ${remainingTime} seconds before resending OTP`;
+      timeoutDisplay.dataset.time = remainingTime - 1;
+    } else {
+      // Once countdown reaches 0, show the resend link
+      document.getElementById('resendOtp').style.display = 'block'; // Show the resend link
+      timeoutDisplay.style.display = 'none'; // Hide the countdown timer text
+    }
+  }
+
+  // Initialize countdown timer on page load
+  window.onload = function() {
+    const timeoutDisplay = document.getElementById('timeoutDisplay');
+    timeoutDisplay.dataset.time = 60; // Set initial remaining time in seconds
+    updateCountdown(); // Call updateCountdown to start the countdown
+  };
+
+  // Call updateCountdown function every second
+  setInterval(updateCountdown, 1000);
+</script>
+
+
+
+
+
+
+<%- include('../layouts/footer.ejs') -%>

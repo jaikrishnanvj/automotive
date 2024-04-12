@@ -1,0 +1,479 @@
+<%- include('../layouts/homeheader.ejs') -%>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<div class="body-wrapper">
+
+
+    <header class="ltn__header-area ltn__header-4 ltn__header-6 ltn__header-transparent gradient-color-2">
+        <!-- ltn__header-top-area start -->
+        <div class="ltn__header-top-area top-area-color-white d-none plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="ltn__top-bar-menu">
+                            <ul>
+                                <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i
+                                            class="icon-mail"></i> info@webmail.com</a></li>
+                                <li><a href="locations.ejs"><i class="icon-placeholder"></i> 15/A, Nest Tower,
+                                        NYC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-top-area end -->
+        <!-- ltn__header-middle-area start -->
+        <div
+            class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black  ltn__logo-right-menu-option plr--9">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="site-logo-wrap">
+
+
+
+
+                            <div class="site-logo">
+                                <a href=""><img src="/public/assets/img/carlogo-removebg-preview(1).png"
+                                        alt="Logo"></a>
+                            </div>
+                            <div class="get-support clearfix get-support-color-white">
+                                <div class="get-support-icon">
+                                    <i class="bi bi-telephone"></i>
+
+                                </div>
+                                <div class="get-support-info">
+                                    <h6>Get Support</h6>
+                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col header-menu-column menu-color-white">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul>
+                                        <li class=""><a href="/shop">Explore</a>
+                                        </li>
+                                        <li class=""><a href="/home">Home</a>
+                                        </li>
+                                        <li class=""><a href="/about">About</a>
+
+                                        </li>
+                                        <li class=""><a href="/shop">Shop</a>
+
+                                        </li>
+                                        <li class=""><a href="/about">News</a>
+
+                                        </li>
+                                        <li class=""><a href="/shop">Feed</a>
+
+                                        </li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        <li class="special-link"><a href="/appointment"> 757 AUTOMOTIVE</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="ltn__header-options ltn__header-options-2">
+                        <!----- header-search-1 -->
+                        <div class="header-search-wrap">
+                            <div class="header-search-1">
+                                <div class="search-icon">
+                                    <i class="bi bi-search"></i>
+
+                                    <i class="icon-cancel  for-search-close"></i>
+                                </div>
+                            </div>
+                            <div class="header-search-1-form">
+                                <form id="#" method="get" action="#">
+                                    <input type="text" name="search" value="" placeholder="Search here..." />
+                                    <button type="submit">
+                                        <span><i class="icon-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- user-menu -->
+                        <div class="ltn__drop-menu user-menu">
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="bi bi-person-circle"></i>
+
+
+
+                                    </a>
+                                    <ul>
+                                        <!-- <li><a href="login.html">Sign in</a></li>
+                                    <li><a href="register.html">Register</a></li> -->
+                                        <li><a href="/account">My Account</a></li>
+                                        
+                                        <li><a href="/wishlist">Wishlist</a></li>
+                                        <li><a href="/logout">log out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mini-cart -->
+                        <div class="mini-cart-icon">
+                            <a href="/cart">
+                                <!-- Example usage of Bootstrap icons in EJS -->
+                                <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
+
+                                <sup></sup>
+                            </a>
+                        </div>
+                        
+
+                        <!-- mini-cart -->
+                        <!-- Mobile Menu Button -->
+                        <div class="mobile-menu-toggle d-xl-none">
+                            <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                <svg viewBox="0 0 800 600">
+                                    <path
+                                        d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
+                                        id="top"></path>
+                                    <path d="M300,320 L540,320" id="middle"></path>
+                                    <path
+                                        d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
+                                        id="bottom"
+                                        transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- HEADER AREA END -->
+
+  
+
+    <div class="wishlist-header">
+        <h2>Continue with the Payment</h2>
+    </div>
+    <style>
+    
+    .wishlist-header {
+    background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
+    padding: 50px 20px 20px; /* Padding around the content */
+    border-bottom: 20px solid #848080; /* Bottom border */
+    
+        }
+
+    .wishlist-header h2 {
+    margin: 60px 10px 3px 20px; /* Remove default margin */
+    right: 20px;
+    font-size: 4; /* Font size */
+   
+    color: #ffffff; /* Text color */
+    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+
+    </style>
+  <div class="col-md-5 order-details">
+    <div class="section-title text-center">
+        <h3 class="title">Your Order</h3>
+    </div>
+    <ul class="list">
+        <li><a href="">Product <span>Total</span></a></li>
+        <% if (products.length > 0) { %>
+            <% products.forEach((product) => { %>
+                <li>
+                    <a href=""><%- product.name %><span class="middle">x <%- product.quantity %></span>
+                        <span class="last">&#x20B9; <%- product.price.toFixed() %></span>
+                    </a>
+                </li>
+            <% }) %>
+            <% let totalPrice = 0; %>
+            <% products.forEach((product) => { %>
+                <% let productTotalPrice = product.price; %>
+                <% console.log('Product Price:', product.price); %>
+                <% totalPrice += productTotalPrice; %>
+                <% console.log('Total Price:', totalPrice); %>
+            <% }) %>
+            
+            <li>
+                <a href="">Total <span id="total">&#x20B9; <%- totalPrice.toFixed() %></span></a>     
+                   </li>
+            <div class="payment-method">
+                <div class="mb-2">
+                    <h5>Payment</h5>
+                </div>
+                <div class="payment-method">
+                    <div class="input-radio">
+                      <input type="radio" name="payment" id="payment-1">
+                      <label for="razorpay">
+                        <span></span>
+                        Cash on Delivery
+                      </label>
+                    </div>
+                  </div>
+              
+                    <div class="payment-method">
+                      <div class="input-radio">
+                        <input type="radio" name="payment" id="payment-2">
+                        <label for="razorpay">
+                          <span></span>
+                          RazorPay
+                        </label>
+                      </div>
+                    </div>
+            <div>
+                <a href="" class="primary-btn order-submit" id="place-order">Place order</a>
+            </div>
+        <% } %>
+    </ul>
+</div>
+
+     
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <style>
+        .order-details {
+            background-color: #f9f9f9;
+            border: 1px solid #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left; /* Align text to the left */
+            margin: 0 auto; /* Center horizontally */
+            max-width: 600px; /* Set maximum width to avoid stretching too wide */
+        }
+    
+        .section-title h3 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%; /* Make the list width 100% */
+        }
+    
+        .list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            width: 100%; /* Make list items 100% width */
+        }
+    
+        .list li:last-child {
+            border-bottom: none;
+        }
+    
+        .list li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            justify-content: space-between; /* Align text evenly */
+            align-items: center; /* Center vertically */
+        }
+    
+        .list li a:hover {
+            color: #ff6600;
+        }
+    
+        .list li span {
+            font-weight: bold;
+            color: #555;
+        }
+    
+        .middle {
+            margin: 0 10px;
+        }
+    
+        #place-order {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block; /* Ensure button takes full width */
+            margin-top: 20px; /* Add space between button and previous content */
+        }
+    
+        #place-order:hover {
+            background-color: #e55e00;
+        }
+    
+        .mb-25 {
+            margin-bottom: 25px;
+        }
+    
+        .payment-method {
+            margin-bottom: 20px;
+        }
+    </style>
+    
+    
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script>
+                document.getElementById('place-order').addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                const productElements = document.querySelectorAll('.list li');
+                const products = [];
+        
+                const paymentMethodRadio1 = document.getElementById('payment-1');
+                const paymentMethodRadio2=document.getElementById('payment-2')
+
+
+                let paymentMethod;
+                if
+                (!paymentMethodRadio1.checked && !paymentMethodRadio2.checked)
+                {
+                Swal.fire({icon:'error',message:"Payment not selected",text:"Please select any of the payment methods"})
+                return
+                }
+                paymentMethod = paymentMethodRadio1.checked ? 'Cash On Delivery' : "Razorpay"; // Set the value based on the selected payment method
+                const isCashOnDeliverySelected = paymentMethodRadio1.checked ? 'Cash On Delivery'   :"Razorpay"
+                console.log("PAYMENTMETHOD",paymentMethod)
+
+                
+                const orderId="<%=order.id%>"
+                const grandTotal = "<%= total %>"; 
+                console.log
+                                const amountInPaise = Math.round(grandTotal);
+                                console.log("moUHNT",amountInPaise)
+                // This assumes grandTotal is passed from the server
+                if(paymentMethod==="Cash On Delivery" && grandTotal>1000)
+                {
+                Swal.fire({
+                    icon:"error",
+                    title:"Payment not available",
+                    text:"COD is available for above 1000"
+                })
+                }
+
+                if (paymentMethod === "Razorpay") {
+                    initiatePayment();
+                }
+                function initiatePayment() {
+                    var options = {
+                        "key": "rzp_test_wSI5EPnj247nka",
+                        "amount": grandTotal*100, // Convert amount to paise
+                        "currency": 'INR',
+                        "name": '777 ',
+                        "description": 'Transaction',
+                        "handler": function(response) {
+                            if (response.razorpay_payment_id) {
+                                fetch(`/rePayment/${orderId}`, {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ paymentMethod: paymentMethod, grandTotal: grandTotal })
+                                })
+                            
+                                Swal.fire({
+                            title: "Paid succesfully!",
+                            icon: "success",
+                            showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                            window.location.href = '/account';
+                            }, 2000);
+                            
+                            } else {
+                                fetch('/orderfailed', {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ paymentMethod: paymentMethod, grandTotal: grandTotal })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    window.location.href = "/userorders";
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    window.location.href = "/userorders";
+                                });
+                            }
+                        }
+                    };
+
+                    var rzp = new Razorpay(options);
+
+                    rzp.on('payment.error', function(response) {
+                console.log("Payment failed", response);
+                setTimeout(() => {
+                    Swal.fire({
+                    icon: "error",
+                    title: "Payment failed",
+                    text: "Payment failed to continue the payment from my orders"
+                    }).then(() => {
+                    window.location.href = '/userorders';
+                    });
+                }, 4000);
+                });
+
+                    rzp.open();
+                }
+                })
+
+
+
+
+
+
+            // function redirectToRazorpay(orderId, amount) {
+            //                 var options = {
+            //                     "key": "rzp_test_2VQ9dtLQDqNIV6",
+            //                     "amount": amount * 100, // Amount in paisa
+            //                     "currency": "INR",
+            //                     "name": "777 autoMotive",
+            //                     "description": "Order Payment",
+            //                     "order_id": orderId,
+            //                     "handler": function (response) {
+            //                         verifyPayment(response);
+            //                     },
+            //                     "prefill": {
+            //                         "name": "Customer Name", // Set to the customer's name
+            //                         "email": "customer@example.com", // Set to the customer's email
+            //                         "contact": "9000090000" // Set to the customer's contact number
+            //                     },
+            //                     "theme": {
+            //                         "color": "#3399cc"
+            //                     }
+            //                 };
+            //                     var rzp1 = new Razorpay(options);
+            //                     rzp1.open();
+            //                     rzp1.on('payment.error',function(response){
+            //                         setTimeout(()=>{
+            //                             swal.fire({
+            //                                 icon:'error',
+            //                                 title:'payment failed',
+            //                                 text:'payment failed to proceed with the orders',
+
+            //                             }).then(()=>{
+            //                                 window.location.href='/account'
+            //                             })
+            //                         },4000)
+            //                     })
+            //                 }
+                        
+        
+      </script>
+     
+  
+
+      
+                     
+     
+      
+
+
+
+
+
+<%- include('../layouts/homefooter.ejs') -%>

@@ -1,0 +1,644 @@
+<%- include('../layouts/homeheader.ejs') -%>
+    <div class="body-wrapper">
+
+
+        <header class="ltn__header-area ltn__header-4 ltn__header-6 ltn__header-transparent gradient-color-2">
+            <!-- ltn__header-top-area start -->
+            <div class="ltn__header-top-area top-area-color-white d-none plr--9">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="ltn__top-bar-menu">
+                                <ul>
+                                    <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i
+                                                class="icon-mail"></i> info@webmail.com</a></li>
+                                    <li><a href="locations.ejs"><i class="icon-placeholder"></i> 15/A, Nest Tower,
+                                            NYC</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ltn__header-top-area end -->
+            <!-- ltn__header-middle-area start -->
+            <div
+                class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black  ltn__logo-right-menu-option plr--9">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="site-logo-wrap">
+
+
+
+
+                                <div class="site-logo">
+                                    <a href=""><img src="/public/assets/img/carlogo-removebg-preview(1).png"
+                                            alt="Logo"></a>
+                                </div>
+                                <div class="get-support clearfix get-support-color-white">
+                                    <div class="get-support-icon">
+                                        <i class="bi bi-telephone"></i>
+
+                                    </div>
+                                    <div class="get-support-info">
+                                        <h6>Get Support</h6>
+                                        <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col header-menu-column menu-color-white">
+                            <div class="header-menu d-none d-xl-block">
+                                <nav>
+                                    <div class="ltn__main-menu">
+                                        <ul>
+                                            <li class=""><a href="/shop">Explore</a>
+                                            </li>
+                                            <li class=""><a href="/home">Home</a>
+                                            </li>
+                                            <li class=""><a href="/about">About</a>
+
+                                            </li>
+                                            <li class=""><a href="/shop">Shop</a>
+
+                                            </li>
+                                            <li class=""><a href="/about">News</a>
+
+                                            </li>
+                                            <li class=""><a href="/shop">Feed</a>
+
+                                            </li>
+                                            <li><a href="/contact">Contact</a></li>
+                                            <li class="special-link"><a href="/appointment"> 757 AUTOMOTIVE</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="ltn__header-options ltn__header-options-2">
+                            <!----- header-search-1 -->
+                            <div class="header-search-wrap">
+                                <div class="header-search-1">
+                                    <div class="search-icon">
+                                        <i class="bi bi-search"></i>
+
+                                        <i class="icon-cancel  for-search-close"></i>
+                                    </div>
+                                </div>
+                                <div class="header-search-1-form">
+                                    <form id="#" method="get" action="#">
+                                        <input type="text" name="search" value="" placeholder="Search here..." />
+                                        <button type="submit">
+                                            <span><i class="icon-search"></i></span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- user-menu -->
+                            <div class="ltn__drop-menu user-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#"> <i class="bi bi-person-circle"></i>
+
+
+
+                                        </a>
+                                        <ul>
+                                            <!-- <li><a href="login.html">Sign in</a></li>
+                                        <li><a href="register.html">Register</a></li> -->
+                                            <li><a href="/account">My Account</a></li>
+                                            
+                                            <li><a href="/wishlist">Wishlist</a></li>
+                                            <li><a href="/logout">log out</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- mini-cart -->
+                            <div class="mini-cart-icon">
+                                <a href="/cart">
+                                    <!-- Example usage of Bootstrap icons in EJS -->
+                                    <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
+
+                                    <sup></sup>
+                                </a>
+                            </div>
+                            
+
+                            <!-- mini-cart -->
+                            <!-- Mobile Menu Button -->
+                            <div class="mobile-menu-toggle d-xl-none">
+                                <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                    <svg viewBox="0 0 800 600">
+                                        <path
+                                            d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
+                                            id="top"></path>
+                                        <path d="M300,320 L540,320" id="middle"></path>
+                                        <path
+                                            d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
+                                            id="bottom"
+                                            transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ltn__header-middle-area end -->
+        </header>
+        <!-- HEADER AREA END -->
+
+      
+
+        <div class="wishlist-header">
+            <h2>Cart</h2>
+        </div>
+        <style>
+        
+        .wishlist-header {
+        background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
+        padding: 50px 20px 20px; /* Padding around the content */
+        border-bottom: 20px solid #848080; /* Bottom border */
+        
+            }
+    
+        .wishlist-header h2 {
+        margin: 60px 10px 3px 20px; /* Remove default margin */
+        right: 20px;
+        font-size: 4; /* Font size */
+       
+        color: #ffffff; /* Text color */
+        
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+    
+    
+        </style>
+
+        <!-- SHOPING CART AREA START -->
+        <div class="liton__shoping-cart-area mb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shoping-cart-inner">
+                            <div class="shoping-cart-table table-responsive">
+                                <% let totalSubTotal=0 %>
+                                    <% if (cart.length> 0) { %>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+
+                                                    <th class="cart-product-image">Image</th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-info"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price">Product</th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    
+                                                    <th class="cart-product-quantity"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-subtotal"></th>
+                                                    <th class="cart-product-price">Price</th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price">Quantity</th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-remove"></th>
+                                                    <th class="cart-product-price"></th>
+                                                    <th class="cart-product-price">Subtotal</th>
+                                                    <th class="cart-product-price">Remove</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                                <% for(let i=0; i < products.length; i++) { %>
+                                                    <tr>
+
+                                                        <td class="cart-product-image">
+                                                            <img
+                                                                src="/public/assetsNew/uploads/<%= products[i].image[0].filename %>">
+                                                        </td>
+                                                        <td class="cart-product-info">
+                                                            <h4><a href="product-details.html">
+                                                                    <%= products[i].productName %>
+                                                                </a></h4>
+                                                        </td>
+                                                        <td id="price" class="cart-product-price">
+                                                            <%= products[i].salePrice %>
+                                                        </td>
+                                                        <td class="cart-product-quantity">
+                                                            <button class="btn btn-sm increment-button"
+                                                                onclick="updateQuantity('quantityInc', '<%= products[i]._id %>')"><span style="font-size: 24px;">&#10133;</span>
+
+
+                                                            </button>
+
+
+                                                            <!-- <input class="quantity-input<%= i %>"
+                                                                id="cartProductqty<%= i %>" style="width: 45px;"
+                                                                type="text" readonly value="<%= cart[i].quantity %>"
+                                                                data-product-index="<%= i %>"> -->
+
+
+                                                                <span><%= cart[i].quantity%></span>
+                                                            
+                                                                <button class="btn btn-sm decrement-button"
+                                                                onclick="updateQuantity('quantityDec', '<%= products[i]._id %>')"><span style="font-size: 24px;">&#10134;</span>
+                                                            </button>
+                                                        </td>
+
+                                                        <td class="cart-product-subtotal">
+                                                            <span id="subtotal<%= i %>">
+                                                                <%= (products[i].salePrice *
+                                                                    cart[i].quantity).toFixed(2) %>
+                                                            </span>
+                                                        </td>
+                                                        <td class="cart-product-remove" data-title="Remove">
+                                                            <a class="text-danger"
+                                                                onclick="confirmDelete('<%= products[i]._id %>')">
+                                                                <span style="color: rgb(255, 0, 34); font-size: 24px;">&#10006;</span>
+
+
+
+                                                           
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <% totalSubTotal +=parseFloat(products[i].salePrice *
+                                                        cart[i].quantity) %>
+                                                        <% } %>
+                                                            <tr class="cart-coupon-row">
+                                                                <td colspan="6">
+                                                                    <div class="cart-coupon">
+                                                                        <!-- <input type="text" name="cart-coupon" placeholder="Coupon code">
+                                                <button type="submit" class="btn theme-btn-2 btn-effect-2">Apply Coupon</button>
+                                            </div> -->
+                                                                </td>
+                                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <% } else { %>
+                                            <div class="container mt-5">
+                                                <div class="text-center">
+                                                    <img src="/assets/imgs/page/download.png" alt="Empty Cart Image">
+                                                    <p>Uh-oh! Your cart is feeling a bit lonely.</p>
+                                                    <p>Time to fill it up with amazing finds!</p>
+                                                    <a href="/home" class="btn btn-primary">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                            </div>
+
+                            <div class="cart-action text-end">
+                                <a class="btn " href="/home"><i class="fi-rs-shopping-bag mr-10"></i></a>
+                            </div>
+
+                            <% if (typeof message !=='undefined' ) { %>
+                                <p class="text-center" style="color: rgb(255, 0, 0) ">
+                                    <%= message %>
+                                </p>
+                                <% } %>
+
+                                    <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
+
+                                    <div class="row mb-50">
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="border p-md-4 p-30 border-radius cart-totals">
+                                                <div class="heading_s1 mb-3">
+                                                    <h4>Cart Totals</h4>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="cart_total_label">sub Total</td>
+                                                                <td class="cart_total_amount">
+                                                                    <span class="font-lg fw-900 text-brand">₹ <%=
+                                                                            totalSubTotal.toFixed(2) %></span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="cart_total_label">Shipping</td>
+                                                                <td class="cart_total_amount">
+                                                                    <i class="ti-gift mr-5"></i> Free Shipping
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <a href="/checkout" class="btn btn-primary"> <i
+                                                        class="fi-rs-box-alt mr-10"></i> Proceed To CheckOut</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- SHOPING CART AREA END -->
+
+
+
+
+
+
+
+        <!-- FOOTER AREA START (ltn__footer-2 ltn__footer-color-1) -->
+        <footer class="ltn__footer-area ltn__footer-2 ltn__footer-color-1">
+            <div class="footer-top-area  section-bg-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-5">
+                            <div class="footer-widget ltn__footer-timeline-widget ltn__footer-timeline-widget-1 bg-image bg-overlay-theme-black-90"
+                                data-bs-bg="img/bg/4.jpg">
+                                <h6 class="ltn__secondary-color text-uppercase">// time shedule</h6>
+                                <h4 class="footer-title">Meet In Timeline.</h4>
+                                <ul>
+                                    <li>Monday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Tuesday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Wednesday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Thursday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Friday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Saturday <span>07:00AM - 20:00PM</span></li>
+                                    <li>Sunday <span>Official Holiday</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-md-7">
+                            <div class="footer-widget footer-menu-widget footer-menu-widget-2-column clearfix">
+                                <h4 class="footer-title">Services.</h4>
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="service.html">Engine Diagnostics</a></li>
+                                        <li><a href="service.html">Vehicles Damaged</a></li>
+                                        <li><a href="service.html">Air Conditioning Evac</a></li>
+                                        <li><a href="service.html">Anti Lock Brake Service</a></li>
+                                        <li><a href="service.html">Computer Diagnostics</a></li>
+                                        <li><a href="service.html">Performance Upgrades</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="service.html">Car Wash & Cleaning</a></li>
+                                        <li><a href="service.html">Choose your Repairs</a></li>
+                                        <li><a href="service.html">Free Consultancy</a></li>
+                                        <li><a href="service.html">Emergency Time</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="footer-widget footer-blog-widget">
+                                <h4 class="footer-title">News Feeds.</h4>
+                                <div class="ltn__footer-blog-item">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                            deals with the normal.</a></h4>
+                                </div>
+                                <div class="ltn__footer-blog-item">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                            deals with the normal.</a></h4>
+                                </div>
+                                <div class="ltn__footer-blog-item">
+                                    <div class="ltn__blog-meta">
+                                        <ul>
+                                            <li class="ltn__blog-date"><i class="far fa-envelope"></i> June 24, 2020
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h4 class="ltn__blog-title"><a href="blog-details.html">The branch of biology that
+                                            deals with the normal.</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ltn__copyright-area ltn__copyright-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="site-logo-wrap">
+                                <div class="site-logo">
+                                    <a href="index.html"><img src="img/logo-2.png" alt="Logo"></a>
+                                </div>
+                                <div class="get-support ltn__copyright-design clearfix">
+                                    <div class="get-support-info">
+                                        <h6>Copyright & Design By</h6>
+                                        <h4>Company - <span class="current-year"></span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 align-self-center">
+                            <div class="ltn__copyright-menu text-end">
+                                <ul>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Claim</a></li>
+                                    <li><a href="#">Privacy & Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER AREA END -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"> </script>
+    <%- include('../layouts/homefooter.ejs') -%>
+
+        <script>
+            function updateQuantity(action, productId, index) {
+                console.log(action)
+                console.log(productId);
+                $.ajax({
+
+                    type: 'POST',
+                    url: `/cart/${action}?id=${productId}`,
+                    // data:{id:productId},
+                    
+                    success: function (data) {
+                        console.log("sdsdsd")
+                        console.log(data)
+
+                        if (!data || typeof data !== 'object') {
+                            console.error("Invalid data received from server.");
+                            return;
+                        }
+
+                        if (data.error) {
+                            // Handle specific errors
+                            if (data.error === "Out of stock") {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "This product is currently out of stock.",
+                                });
+                            } else {
+                                // Handle other errors
+                                console.log("product qty must be  one")
+                            }
+                            return;
+                        }
+
+                        const newQuantity = Math.max(1, data.quantity);
+
+                        console.log(newQuantity, 'llllllll');
+
+                        // const cartProductQty = $(`#cartProductqty${index}`);
+                        // const priceElement = $(`#cartProductqty${index}`).closest('tr').find('.price span');
+
+
+                        const cartProductQty = $(`#cartProductqty${index}`);
+                        const priceElement = $(`#subtotal${index}`).closest('tr').find('price');
+
+                        // const priceElement = $(`#cartProductqty${index}`).closest('tr').find('.cart-product-price');
+                        console.log(priceElement, 'jjjjjjjjjjj');
+
+                        const salePriceStr = priceElement.text().replace('$', '').trim();
+                        location.reload()
+                         
+                        if (!salePriceStr) {
+                            console.error("Error: salePriceStr is null, undefined, or empty");
+                            return;
+                        }
+
+                        // const salePriceElement = document.getElementById('price');
+                        // const salePriceStr = salePriceElement.textContent.trim();
+
+
+                        const salePrice = parseFloat(salePriceStr);
+
+                        console.log(salePrice,'kkkk');
+
+
+                        if (isNaN(salePrice)) {
+                            console.error("Error: salePrice is NaN");
+                        } else {
+                            cartProductQty.val(newQuantity);
+                            const newSubtotal = (newQuantity * salePrice).toFixed(2);
+                            $(`#subtotal${index}`).text(newSubtotal);
+
+                            let totalSubTotal = 0;
+                            $('.text-right[data-title="Cart"] span').each(function () {
+                                totalSubTotal += parseFloat($(this).text());
+                            });
+
+                            $('.cart_total_amount span').text(`$${totalSubTotal.toFixed(2)}`);
+                           
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error updating quantity:", error);
+                        const errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error";
+                        Swal.fire({
+                            icon: "error",
+                            title: "ERROR",
+                            text: errorMessage,
+                        });
+                    }
+                });
+            }
+        </script>
+
+
+
+
+
+
+
+        <script>
+            function confirmDelete(productId) {
+                // Set up a Bootstrap modal for confirmation
+                const confirmationModal = new bootstrap.Modal(
+                    document.getElementById("confirmationModal"),
+                    {
+                        backdrop: "static", // Prevent closing on click outside the modal
+                        keyboard: false, // Prevent closing with the keyboard Esc key
+                    }
+                );
+
+                // Display the modal
+                confirmationModal.show();
+
+                // Set up the delete button's click event to send a DELETE request
+                const deleteButton = document.getElementById("deleteButton");
+                deleteButton.addEventListener("click", async () => {
+                    try {
+                        // Send a DELETE request using the Fetch API
+                        const response = await fetch(`/delete-cartItem?id=${productId}`, {
+                            method: "DELETE",
+                        });
+
+                        if (response.ok) {
+                            // Redirect or perform any other action after successful deletion
+                            window.location.href = "/cart";
+                        } else {
+                            // Handle error response
+                            console.error("Error deleting cart item:", response.statusText);
+                        }
+                    } catch (error) {
+                        console.error("Error deleting cart item:", error);
+                    }
+                });
+            }
+        </script>
+
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this item?</p>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a id="deleteButton" href="" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            
+        </style>
