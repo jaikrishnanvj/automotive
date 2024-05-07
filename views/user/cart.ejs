@@ -110,7 +110,7 @@
                                             <!-- <li><a href="login.html">Sign in</a></li>
                                         <li><a href="register.html">Register</a></li> -->
                                             <li><a href="/account">My Account</a></li>
-                                            
+
                                             <li><a href="/wishlist">Wishlist</a></li>
                                             <li><a href="/logout">log out</a>
                                             </li>
@@ -127,7 +127,7 @@
                                     <sup></sup>
                                 </a>
                             </div>
-                            
+
 
                             <!-- mini-cart -->
                             <!-- Mobile Menu Button -->
@@ -153,31 +153,34 @@
         </header>
         <!-- HEADER AREA END -->
 
-      
+
 
         <div class="wishlist-header">
             <h2>Cart</h2>
         </div>
         <style>
-        
-        .wishlist-header {
-        background: linear-gradient(to right, #645fff, #000000); /* Gradient background */
-        padding: 50px 20px 20px; /* Padding around the content */
-        border-bottom: 20px solid #848080; /* Bottom border */
-        
+            .wishlist-header {
+                background: linear-gradient(to right, #645fff, #000000);
+                /* Gradient background */
+                padding: 50px 20px 20px;
+                /* Padding around the content */
+                border-bottom: 20px solid #848080;
+                /* Bottom border */
+
             }
-    
-        .wishlist-header h2 {
-        margin: 60px 10px 3px 20px; /* Remove default margin */
-        right: 20px;
-        font-size: 4; /* Font size */
-       
-        color: #ffffff; /* Text color */
-        
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            .wishlist-header h2 {
+                margin: 60px 10px 3px 20px;
+                /* Remove default margin */
+                right: 20px;
+                font-size: 4;
+                /* Font size */
+
+                color: #ffffff;
+                /* Text color */
+
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
-    
-    
         </style>
 
         <!-- SHOPING CART AREA START -->
@@ -209,7 +212,7 @@
                                                     <th class="cart-product-price"></th>
                                                     <th class="cart-product-price"></th>
                                                     <th class="cart-product-price"></th>
-                                                    
+
                                                     <th class="cart-product-quantity"></th>
                                                     <th class="cart-product-price"></th>
                                                     <th class="cart-product-price"></th>
@@ -243,18 +246,20 @@
                                                         </td>
                                                         <td class="cart-product-quantity">
                                                             <button class="btn btn-sm increment-button"
-                                                            onclick="updateQuantity('quantityInc', '<%= products[i]._id %>', '<%= i %>')">
-                                                        <span style="font-size: 24px;">&#10133;</span>
-                                                    </button>
-                                                    
-                                                    <!-- Display the quantity -->
-                                                    <span id="quantityDisplay<%= i %>"><%= cart[i].quantity %></span>
-                                                    
-                                                    <button class="btn btn-sm decrement-button"
-                                                            onclick="updateQuantity('quantityDec', '<%= products[i]._id %>', '<%= i %>')">
-                                                        <span style="font-size: 24px;">&#10134;</span>
-                                                    </button>
-                                                    
+                                                                onclick="updateQuantity('quantityInc', '<%= products[i]._id %>', '<%= i %>')">
+                                                                <span style="font-size: 24px;">&#10133;</span>
+                                                            </button>
+
+                                                            <!-- Display the quantity -->
+                                                            <span id="quantityDisplay<%= i %>">
+                                                                <%= cart[i].quantity %>
+                                                            </span>
+
+                                                            <button class="btn btn-sm decrement-button"
+                                                                onclick="updateQuantity('quantityDec', '<%= products[i]._id %>', '<%= i %>')">
+                                                                <span style="font-size: 24px;">&#10134;</span>
+                                                            </button>
+
                                                         </td>
 
                                                         <td class="cart-product-subtotal">
@@ -266,11 +271,12 @@
                                                         <td class="cart-product-remove" data-title="Remove">
                                                             <a class="text-danger"
                                                                 onclick="confirmDelete('<%= products[i]._id %>')">
-                                                                <span style="color: rgb(255, 0, 34); font-size: 24px;">&#10006;</span>
+                                                                <span
+                                                                    style="color: rgb(255, 0, 34); font-size: 24px;">&#10006;</span>
 
 
 
-                                                           
+
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -323,7 +329,7 @@
                                                             <tr>
                                                                 <td class="cart_total_label">sub Total</td>
                                                                 <td class="cart_total_amount">
-                                                                    <span  class="font-lg fw-900 text-brand">₹ <%=
+                                                                    <span class="font-lg fw-900 text-brand">₹ <%=
                                                                             totalSubTotal.toFixed(2) %></span>
                                                                 </td>
                                                             </tr>
@@ -477,64 +483,64 @@
     <%- include('../layouts/homefooter.ejs') -%>
 
         <script>
-         function updateQuantity(action, productId, index) {
-    $.ajax({
-        type: 'POST',
-        url: `/cart/${action}?id=${productId}`,
-        success: function (data) {
-            console.log(data,"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
-            if (!data || typeof data !== 'object') {
-                console.error("Invalid data received from server.");
-                return;
+            function updateQuantity(action, productId, index) {
+                $.ajax({
+                    type: 'POST',
+                    url: `/cart/${action}?id=${productId}`,
+                    success: function (data) {
+                        console.log(data, "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+                        if (!data || typeof data !== 'object') {
+                            console.error("Invalid data received from server.");
+                            return;
+                        }
+
+                        if (data.error) {
+                            if (data.error === "Out of stock") {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "This product is currently out of stock.",
+                                });
+                            } else {
+                                console.log("product qty must be one")
+                            }
+                            return;
+                        }
+                        const newQuantity = Math.max(1, data.quantity);
+
+                        // Update the quantity display element
+                        const quantityDisplayElement = $(`#quantityDisplay${index}`);
+                        quantityDisplayElement.text(newQuantity);
+
+                        // Fetch the sale price directly from the HTML
+                        const salePrice = parseFloat($(`#price`).text());
+
+                        // Update the subtotal for the current product
+                        const newSubtotal = (newQuantity * salePrice).toFixed(2);
+                        console.log("New Subtotal:", newSubtotal); // Debugging
+                        $(`#subtotal${index}`).text(newSubtotal);
+
+                        // Recalculate total subtotal
+                        let totalSubTotal = 0;
+                        $(".cart-product-subtotal span").each(function () {
+                            totalSubTotal += parseFloat($(this).text());
+                        });
+
+                        // Update the total subtotal in the HTML
+                        $(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error updating quantity:", error);
+                        const errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error";
+                        Swal.fire({
+                            icon: "error",
+                            title: "ERROR",
+                            text: errorMessage,
+                        });
+                    }
+                });
             }
-
-            if (data.error) {
-                if (data.error === "Out of stock") {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "This product is currently out of stock.",
-                    });
-                } else {
-                    console.log("product qty must be one")
-                }
-                return;
-            }
-            const newQuantity = Math.max(1, data.quantity);
-
-// Update the quantity display element
-const quantityDisplayElement = $(`#quantityDisplay${index}`);
-quantityDisplayElement.text(newQuantity);
-
-// Fetch the sale price directly from the HTML
-const salePrice = parseFloat($(`#price`).text());
-
-// Update the subtotal for the current product
-const newSubtotal = (newQuantity * salePrice).toFixed(2);
-console.log("New Subtotal:", newSubtotal); // Debugging
-$(`#subtotal${index}`).text(newSubtotal);
-
-// Recalculate total subtotal
-let totalSubTotal = 0;
-$(".cart-product-subtotal span").each(function () {
-    totalSubTotal += parseFloat($(this).text());
-});
-
-// Update the total subtotal in the HTML
-$(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
-
-        },
-        error: function (xhr, status, error) {
-            console.error("Error updating quantity:", error);
-            const errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error";
-            Swal.fire({
-                icon: "error",
-                title: "ERROR",
-                text: errorMessage,
-            });
-        }
-    });
-}
 
 
 
@@ -548,6 +554,7 @@ $(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
 
         <script>
             function confirmDelete(productId) {
+                window.productId = productId
                 // Set up a Bootstrap modal for confirmation
                 const confirmationModal = new bootstrap.Modal(
                     document.getElementById("confirmationModal"),
@@ -561,13 +568,16 @@ $(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
                 confirmationModal.show();
 
                 // Set up the delete button's click event to send a DELETE request
-                const deleteButton = document.getElementById("deleteButton");
-                deleteButton.addEventListener("click", async () => {
-                    try {
+                
+            }
+            const handleDelete = async()=>{
+                try {
                         // Send a DELETE request using the Fetch API
+                        const productId = window.productId
+                        console.log('Cart delete working')
                         const response = await fetch(`/delete-cartItem?id=${productId}`, {
                             method: "DELETE",
-                        });
+                        }); 
 
                         if (response.ok) {
                             // Redirect or perform any other action after successful deletion
@@ -579,8 +589,11 @@ $(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
                     } catch (error) {
                         console.error("Error deleting cart item:", error);
                     }
-                });
             }
+            // const deleteButton = document.getElementById("deleteButton");
+            //     deleteButton.addEventListener("click", async () => {
+                  
+            //     });
         </script>
 
         <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
@@ -598,12 +611,12 @@ $(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <a id="deleteButton" href="" class="btn btn-danger">Delete</a>
+                        <button id="deleteButton" onclick="handleDelete()" href="" class="btn btn-danger">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <style>
-            
+
         </style>

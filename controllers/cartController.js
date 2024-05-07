@@ -305,12 +305,15 @@ const addToCart = async (req, res) => {
 
 const deleteCartItem=async(req,res)=>{
     try {
-         const id=req.query.id
+        const id=req.query.id
+        console.log('Working',id)
          const result=await Cart.deleteOne({product_id:id});
      if(result.deletedCount==0){
+        console.log('work')
         return res.status(404).send('cart item not found')
     }
-    res.redirect('/cart')   
+    return res.status(200).json({message:'Deleted successfully'})
+    // res.redirect('/cart')   
     } catch (error) {
         console.error("error in deleted cart item:",error);
         res.status(500).send('internal server error')
