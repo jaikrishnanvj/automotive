@@ -482,6 +482,7 @@
         type: 'POST',
         url: `/cart/${action}?id=${productId}`,
         success: function (data) {
+            console.log(data,"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
             if (!data || typeof data !== 'object') {
                 console.error("Invalid data received from server.");
                 return;
@@ -499,14 +500,29 @@
                 }
                 return;
             }
-
             const newQuantity = Math.max(1, data.quantity);
 
-            // Update the quantity display element
-            const quantityDisplayElement = $(`#quantityDisplay${index}`);
-            quantityDisplayElement.text(newQuantity);
+// Update the quantity display element
+const quantityDisplayElement = $(`#quantityDisplay${index}`);
+quantityDisplayElement.text(newQuantity);
 
-            // Rest of your code to update subtotal...
+// Fetch the sale price directly from the HTML
+const salePrice = parseFloat($(`#price`).text());
+
+// Update the subtotal for the current product
+const newSubtotal = (newQuantity * salePrice).toFixed(2);
+console.log("New Subtotal:", newSubtotal); // Debugging
+$(`#subtotal${index}`).text(newSubtotal);
+
+// Recalculate total subtotal
+let totalSubTotal = 0;
+$(".cart-product-subtotal span").each(function () {
+    totalSubTotal += parseFloat($(this).text());
+});
+
+// Update the total subtotal in the HTML
+$(".cart_total_amount .font-lg").text(`₹ ${totalSubTotal.toFixed(2)}`);
+
         },
         error: function (xhr, status, error) {
             console.error("Error updating quantity:", error);
