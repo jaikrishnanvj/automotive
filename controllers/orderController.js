@@ -800,14 +800,14 @@ const downloadPdf = async (req, res) => {
       
 
     // Add overall sales count, discount, and coupon offer
-    const overallSalesCount = deliveredOrders.length;
+   
     // const overallDiscount = deliveredOrders.reduce((acc, order) => acc + (order.discount || 0), 0);
     // const overallCouponOffer = deliveredOrders.reduce((acc, order) => acc + (order.couponOffer || 0), 0);
     
 
     doc.moveDown().fontSize(12);
-    doc.text(`Overall Sales Count: ${overallSalesCount}`);
-    // doc.text(`Overall Discount: ${overallDiscount}`);
+    doc.text(`777automotive@gmail.com. `);
+    doc.text(`Kochi,kerala.`);
     // doc.text(`Overall Coupon Offer: ${overallCouponOffer}`);
 
     const rowHeight = 20; // You can adjust this value based on your preference
@@ -847,9 +847,9 @@ const downloadPdf = async (req, res) => {
           .stroke() // Draw the rectangle
           .text(order._id.toString(), 50, yPos)
           .text(order.createdOn.toISOString().split("T")[0], 190, yPos)
-          .text(order.user ? order.user.name : "User not available", 250, yPos)
+          .text(order.user ? order.user.username : "User not available", 250, yPos)
           .text(
-            currentProduct.productName || "Product not available",
+            currentProduct.product.productName || "Product not available",
             310,
             yPos
           ) // Add product name

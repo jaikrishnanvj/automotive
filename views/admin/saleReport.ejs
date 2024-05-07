@@ -65,7 +65,7 @@
                 <th scope="col">Date</th>
                 <th scope="col">Customer</th>
 
-                <th scope="col">product/th>
+                <th scope="col">Product</th>
 
                 <th scope="col">Quantity</th>
                 <th scope="col">Total</th>
@@ -87,21 +87,22 @@
                       </td>
                       <% if (order.user) { %>
                         <td>
-                          <%= order.user.name %>
+                          <%= order.user.username %>
                         </td>
                         <% } else { %>
                           <td>User not available</td>
                           <% } %>
                             <!-- Check if currentProduct is not null before accessing its properties -->
                             <td>
-                              <% if (currentProduct && currentProduct.productName) { %>
-                                <%= currentProduct.productName %>
-                                  <% } else { %>
-                                    Product not available
-                                    <% } %>
+                              <% if (currentProduct && currentProduct.product && currentProduct.product.productName) { %>
+                                <%= currentProduct.product.productName %>
+                              <% } else { %>
+                                Product
+                              <% } %>
                             </td>
-
+                            
                             <td>
+                              
                               <%= order.products[j].quantity %>
                             </td>
                             <td>
