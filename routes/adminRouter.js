@@ -17,6 +17,7 @@ admin_route.use(
         saveUninitialized:true
     })
 )
+const errorHandler=require('../Middlewares/errorHandler')
 
 const storage = multer.diskStorage({
     destination:function (req,file,cb){
@@ -100,4 +101,10 @@ admin_route.get('/topCategories',auth.isLogin,adminController.topSellingCategory
 //============================================admin logout========================================================================================//
 admin_route.get("/logout", auth.isLogin,adminController.adminLogout);
 
+admin_route.use( errorHandler)
+
+admin_route.use('*', (req, res) => {
+    // Redirect to the home page
+    res.render("404")
+})
 module.exports = admin_route;

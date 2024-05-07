@@ -50,59 +50,42 @@
         >
           <% for( let index = 0; index < product.length; index++ ) { %>
 
-          <div id="<%= product[index]._id %>" class="col">
-            <div class="card card-product-grid">
-             
-              <a href="#" class="img-wrap">
-                <img
-                 src="/public/assetsNew/uploads/<%= product[index]?.image[0]?.filename %>"
-                   alt="Product Image"
-                   />
-              </a>
-             
-              <div class="info-wrap">
-                <a href="#" class="title text-truncate"
-                  ><%= product[index].productName %></a
-                >
-                <div class="price mb-2">
-                <% if (product[index].salePrice === product[index].regularPrice) { %>
-                  <span>₹<%= product[index].salePrice.toLocaleString() %></span>
-                  
-                  <% } else { %>
-                    <span>₹<%= product[index].salePrice.toLocaleString() %></span>
-                     
-                <% } %>
-              </div>
-                
-                <!-- price.// -->
-                <a
-                  href="/admin/products/edit-product?id=<%=product[index]._id %>"
-                  class="btn btn-sm font-sm rounded btn-brand"
-                >
-                  <i class="material-icons md-edit"></i> Edit
-                </a>
-
-                <a href="#" onclick="confirmDeleteProduct('<%= product[index]._id %>')">
-                  <i class="fa-solid fa-trash"></i> Delete
-                </a>
-                <% if (product[index].productOffer==0) { %>
-                  <a href="#" class="btn btn-sm font-sm rounded btn-brand w-100 mt-1"
-                      data-bs-toggle="modal"
-                      data-bs-target="#applyOfferModal<%= product[index]._id %>">
-                      Apply Offer
+            <div id="<%= product[index]._id %>" class="col" style="width: 250px; height: 400px;">
+              <div class="card card-product-grid" style="width: 100%; height: 100%;">
+                  <a href="#" class="img-wrap" style="display: block; width: 100%; height: 60%;">
+                      <img src="/public/assetsNew/uploads/<%= product[index]?.image[0]?.filename %>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
                   </a>
-                  <% } else { %>
-                      <a href="#" onclick="removeOffer('<%= product[index]._id  %>')"
-                          class="btn btn-sm font-sm rounded btn-brand w-100 mt-1">
-                          x remove offer
+                  <div class="info-wrap" style="padding: 10px; width: 100%; height: 40%; box-sizing: border-box;">
+                      <a href="#" class="title text-truncate" style="display: block;"><%= product[index].productName %></a>
+                      <div class="price mb-2">
+                          <% if (product[index].salePrice === product[index].regularPrice) { %>
+                              <span>₹<%= product[index].salePrice.toLocaleString() %></span>
+                          <% } else { %>
+                              <span>₹<%= product[index].salePrice.toLocaleString() %></span>
+                          <% } %>
+                      </div>
+                      <a href="/admin/products/edit-product?id=<%=product[index]._id %>" class="btn btn-sm font-sm rounded btn-brand">
+                          <i class="material-icons md-edit"></i> Edit
                       </a>
+                      <a href="#" onclick="confirmDeleteProduct('<%= product[index]._id %>')">
+                          <i class="fa-solid fa-trash"></i> Delete
+                      </a>
+                      <% if (product[index].productOffer==0) { %>
+                          <a href="#" class="btn btn-sm font-sm rounded btn-brand w-100 mt-1"
+                              data-bs-toggle="modal"
+                              data-bs-target="#applyOfferModal<%= product[index]._id %>">
+                              Apply Offer
+                          </a>
+                      <% } else { %>
+                          <a href="#" onclick="removeOffer('<%= product[index]._id  %>')" class="btn btn-sm font-sm rounded btn-brand w-100 mt-1">
+                              x remove offer
+                          </a>
                       <% } %>
-
+                  </div>
               </div>
-
-            </div>
-            <!-- card-product  end// -->
+              <!-- card-product  end// -->
           </div>
+          
           <!-- col.// -->
 
           <% } %>

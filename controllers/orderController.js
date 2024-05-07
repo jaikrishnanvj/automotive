@@ -13,7 +13,8 @@ const PDFDocument=require('pdfkit')
 const ExcelJS = require("exceljs");
 const easyInvoice=require("easyinvoice");
 const { response } = require('../routes/userRouter');
-const moment=require("moment")
+const moment=require("moment");
+const { log } = require('console');
 
 
 
@@ -337,21 +338,21 @@ const continuePayment = async (req, res) => {
     const user = await User.findById(userId);
     const orderId = req.query.id;
     console.log(orderId);
-    const order = await Order.findById(orderId).populate('products');
+    const order = await Order.findById(orderId).populate("products.product")
     console.log(order, 'ds');
 
     let total = 0;
 
     // Calculate total price of products in the order
-    for (const product of order.products) {
-      const productDetails = await Product.findById(product.product);
-      if (productDetails) {
-        total += parseFloat(productDetails.salePrice) * product.quantity;
-      } else {
-        console.error(`Product not found: ${product.product}`);
-      }
-    }
-    console.log("TOT",total)
+    // for (const product of order.products) {
+    //   const productDetails = await Product.findById(product.product)
+    //   if (productDetails) {
+    //     total += parseFloat(productDetails.salePrice) * product.quantity;
+    //   } else {
+    //     console.error(`Product not found: ${product.product}`);
+    //   }
+    // }
+    console.log("TOT",order)
     
 
     res.render('continuePayment', {
@@ -359,11 +360,13 @@ const continuePayment = async (req, res) => {
       products: order.products,
       order,
       total,
+      moment,
+      
     });
 
   } catch (error) {
     console.error("Error occurred during the payment", error);
-    res.status(500).render('error'); // Send appropriate error response
+    res.status(500).render('500'); // Send appropriate error response
   }
 };
 
@@ -703,6 +706,8 @@ const failedOrder = async (req, res) => {
 const saleReportPage = async (req, res) => {
   try {
     const { startDate, endDate, filter, page = 1, limit = 5 } = req.query;
+    console.log("query",req.query)
+    console.log("IN salesreportpage");
     let query = { status: 'Delivered' };
 
     if (startDate && endDate) {
@@ -755,18 +760,21 @@ const saleReportPage = async (req, res) => {
 
 const downloadPdf = async (req, res) => {
   try {
-    const { date } = req.query;
+    console.log("IN download pdf");
+    console.log("BODY",req.query)
+    const { startDate,endDate } = req.query;
     let query = { status: "Delivered" };
     
-    if (date) {
-      const startDate = new Date(date);
-      startDate.setUTCHours(0, 0, 0, 0);
-      const endDate = new Date(date);
-      endDate.setUTCHours(23, 59, 59, 999);
+    if (startDate && endDate) {
+      const startDateObj = new Date(startDate);
+            console.log("START",startDate)
+      startDateObj.setUTCHours(0, 0, 0, 0);
+      const endDateObj = new Date(endDate);
+      console.log("END",endDate)
+      endDateObj.setUTCHours(23, 59, 59, 999);
     
       // Correct the field to 'createdOn' for date filtering
-      query.createdOn = { $gte: startDate, $lt: endDate };
-    }
+      query.createdOn = { $gte: startDateObj, $lt: endDateObj };    }
     
     // Fetch delivered orders from the database
     const deliveredOrders = await Order.find(query)
@@ -1178,7 +1186,7 @@ const saveInvoice = async (req, res) => {
 }
 
     // Total amount
-    doc.font('Helvetica-Bold').fontSize(16).text(`Total Price: $${totalPrice}`, { align: 'left' }).moveDown(0.5);
+    doc.font('Helvetica-Bold').fontSize(16).text(`Total Price: ₹${order.totalPrice.toFixed(2)}`, { align: 'left' }).moveDown(0.5);
 
     // Thank you message
     doc.font('Helvetica').fontSize(14).text('Thank you for your purchase!', { align: 'center' }).moveDown(0.5);
@@ -1190,6 +1198,8 @@ const saveInvoice = async (req, res) => {
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
+
+
 
 
   module.exports={

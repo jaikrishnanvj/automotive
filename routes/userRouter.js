@@ -26,12 +26,15 @@ const couponController=require('../controllers/couponController')
 const wishlistController=require('../controllers/wishlistController')
 
 
+
 // to convert the incoming quest into url encoded format
 
 const userController=require("../controllers/userControllers");
 const wishlist = require("../Models/wishlistModel")
+const errorHandler = require("../Middlewares/errorHandler")
 
 // user_route.get('/register',auth.isLogout,userController.loadLogin)
+user_route.get('/',userController.landingPage)
 
 user_route.post("/register",userController.insertUser);
 user_route.get('/otp', auth.isLogout, userController.loadOtp);
@@ -46,22 +49,22 @@ user_route.post('/login',checkBlocked,userController.verifyLogin)
 // cart
 
 // user_route.post('/addcart',auth.isLogin,cartController.)
-user_route.get('/cart',auth.isLogin,cartController.loadCart)
-user_route.post('/productDetails/:id',auth.isLogin,cartController.addToCart);
+user_route.get('/cart',checkBlocked,auth.isLogin,cartController.loadCart)
+user_route.post('/productDetails/:id',checkBlocked,auth.isLogin,cartController.addToCart);
 user_route.post('/updatequantity',auth.isLogin,cartController.updateQuantity);
 user_route.delete('/delete-cartItem',auth.isLogin,cartController.deleteCartItem);
 user_route.post("/cart/quantityInc",auth.isLogin,cartController.quantityInc);
 user_route.post("/cart/quantityDec",auth.isLogin,cartController.quantityDec);
 
 // wishlist
-user_route.get('/wishlist',auth.isLogin,wishlistController.laodWishlist)
+user_route.get('/wishlist',checkBlocked,auth.isLogin,wishlistController.laodWishlist)
 user_route.post('/productsDetails/:id',auth.isLogin,wishlistController.addToWishlist)
 user_route.post('/wishlistCart',auth.isLogin,wishlistController.wishlistToCart)
 user_route.delete("/delete-wishlist",auth.isLogin,wishlistController.deleteWishlist)
 
 // address
-user_route.get("/checkout",auth.isLogin,cartController.checkoutPage)
-user_route.get("/profile",auth.isLogin,addressController.profilePage)
+user_route.get("/checkout",checkBlocked,auth.isLogin,cartController.checkoutPage)
+user_route.get("/profile",checkBlocked,auth.isLogin,addressController.profilePage)
 // user_route.get("/AddAddress",auth.isLogin,addressController.AddAddress)
 user_route.post("/addAddress",auth.isLogin,addressController.addAddress)
 user_route.delete("/deleteAddress",auth.isLogin,addressController.deleteAddress)
@@ -84,11 +87,11 @@ user_route.get("/saveinvoice", auth.isLogin, orderController.saveInvoice);
 
 // order
 user_route.post('/orderPlaced',auth.isLogin,orderController.orderComplete)
-user_route.get('/order',auth.isLogin,orderController.orderCompleteLoad)
-user_route.get("/orderDetails", auth.isLogin, orderController.orderDetails);
+user_route.get('/order',checkBlocked,auth.isLogin,orderController.orderCompleteLoad)
+user_route.get("/orderDetails",checkBlocked, auth.isLogin, orderController.orderDetails);
 user_route.put("/cancelOrder/:orderId/:pId",auth.isLogin,orderController.cancelOrder);
 user_route.post("/order-return/:orderId/:productId",auth.isLogin,orderController.returnOrder)
-user_route.get("/continuePayment",auth.isLogin,orderController.continuePayment)
+user_route.get("/continuePayment",checkBlocked,auth.isLogin,orderController.continuePayment)
 user_route.post('/rePayment/:id',auth.isLogin,orderController.failedOrder)
 
 
@@ -98,13 +101,13 @@ user_route.post('/remove-coupon',checkBlocked,auth.isLogin,couponController.remo
 
 
 // home
-user_route.get('/about',auth.isLogin,userController.about)
-user_route.get('/contact',auth.isLogin,userController.contact)
-user_route.get('/appointment',auth.isLogin,userController.appointment)
-user_route.get('/shop',auth.isLogin,productController.loadShop)
+user_route.get('/about',checkBlocked,auth.isLogin,userController.about)
+user_route.get('/contact',checkBlocked,auth.isLogin,userController.contact)
+user_route.get('/appointment',checkBlocked,auth.isLogin,userController.appointment)
+user_route.get('/shop',checkBlocked,auth.isLogin,productController.loadShop)
 
-user_route.get("/product-details",productController.loadProductDetail)
-user_route.get('/account',auth.isLogin,userController.account)
+user_route.get("/product-details",checkBlocked,productController.loadProductDetail)
+user_route.get('/account',checkBlocked,auth.isLogin,userController.account)
 // user_route.get('/filter',auth.isLogin,userController.filterProductsByCategory)
 // logout
 user_route.get('/logout',auth.isLogin,userController.userLogout)
@@ -116,8 +119,21 @@ user_route.get("/ForgetPassVerifyOtp", userController.forgetPassVerifyOtp);
 user_route.post("/ForgetPassVerifyOtp", userController.verifyOtp);
 user_route.post("/changePassword", userController.changePassword);
 
+user_route.get('/trigger-error', (req, res, next) => {
+    // Simulate an error (e.g., database operation fails)
+    const err = new Error('Simulated error');
+    // Set a status code for the error
+    err.statusCode = 500;
+    // Pass the error to the next middleware
+    next(err);
+});
+user_route.use( errorHandler)
 
-
+user_route.get('/*', (req, res) => {
+    // Redirect to the home page
+    res.render("404")
+    
+});
 module.exports=user_route
 
 

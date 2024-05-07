@@ -226,7 +226,8 @@
                                                     </strong>,
                                                     <br>
                                                     This is the receipt for a payment of
-                                                    <strong>$<%= order.products.reduce((totalPrice, product) => totalPrice + (product.price), 0).toFixed(2) %></strong>
+                                                    <strong>
+                                                        ₹<%= order.totalPrice.toFixed(2) %></strong>
 
                                                     (INR) for your works
                                                 </div>
@@ -265,14 +266,14 @@
                                                         shipping address by next week. Thanks a lot.
                                                     </p> -->
                                                     <div class="field">
-                                                        Subtotal <span>₹ <%= totalSubTotal.toFixed(2) %> </span>
+                                                        Subtotal <span>₹  ₹<%= order.totalPrice.toFixed(2) %></span>
                                                     </div>
                                                     <div class="field">
                                                        Free Shipping <span>₹0.00</span>
                                                     </div>
 
                                                     <div class="field grand-total">
-                                                        Total <span>₹ <%= totalSubTotal.toFixed(2) %></span>
+                                                        Total <span>₹   ₹<%= order.totalPrice.toFixed(2) %></span>
                                                     </div>
                                                 </div>
                                             </div>

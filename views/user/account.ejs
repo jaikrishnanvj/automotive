@@ -120,7 +120,7 @@
                                 <!-- Example usage of Bootstrap icons in EJS -->
                                 <i class="bi bi-cart"></i> <!-- Example of an alarm icon -->
 
-                                <sup>2</sup>
+                                <sup><%= cartItemsCount %></sup>
                             </a>
                         </div>
                         <!-- mini-cart -->
@@ -519,7 +519,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="card-footer">
-                                                                <a href="/editProfile?id=<%= user._id %>" class="btn btn-primary">Edit Profile</a>
+                                                                <a href="/editprofile?id=<%= user._id %>" class="btn btn-primary">Edit Profile</a>
                                                             </div>
                                                         </div>
                                                     </div>

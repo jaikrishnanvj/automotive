@@ -11,6 +11,14 @@ const Wallet=require('../Models/walletModel')
 const Category=require('../Models/categoryModel')
 const Cart=require('../Models/cartModel')
 
+const landingPage=async(req,res)=>{
+    try {
+        res.render('landingPage')
+    } catch (error) {
+        
+    }
+}
+
 const securePassword = async (password) => {
     try {
         const passwordHash = await bcrypt.hash(password, 10)
@@ -414,6 +422,7 @@ const account = async (req, res) => {
         const currentPage = parseInt(req.query.page) || 1;
         const perPage = 10; // Adjust the number of items per page as needed
         const orderId = req.query.id;
+        const cartItemsCount = await Cart.countDocuments({ userId });
 
         // Pagination for orderData
         const orderCount = await Order.countDocuments({ user: userId });
@@ -453,7 +462,8 @@ const account = async (req, res) => {
             wallet: walletData, 
             totalPagesOrder: totalPagesOrder, 
             totalPagesProducts: totalPagesProducts, 
-            currentPage: currentPage 
+            currentPage: currentPage ,
+            cartItemsCount:cartItemsCount
         });
     } catch (error) {
         console.log(error.message);
@@ -596,5 +606,6 @@ module.exports = {
     forgetPassVerifyOtp,
     verifyOtp,
     changePassword,
+    landingPage
  
 };

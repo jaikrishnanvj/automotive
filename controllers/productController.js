@@ -8,6 +8,7 @@ const Cart=require('../Models/cartModel')
 
 
 
+
 // const ShowProduct = async(req,res)=>{
 //     try {
 //         const sortCategory = req.query.id;
@@ -96,7 +97,7 @@ const createNewProduct = async (req, res) => {
             myCategory,
             quantity,
         } = req.body;
-
+        console.log(req.body)
         // const categories=await Category.find()
         // if (marketPrice === salePrice) {
         //     return res.render("add-product",{ category: categories }, { message: "Regular price and sale price cannot be the same." });
@@ -227,7 +228,7 @@ const loadShop = async (req, res) => {
         const user_id = req.session.user_id;
         const sortCategory = req.query.id;
         const page = req.query.page || 0;
-        const productPerPage = 4;
+        const productPerPage = 8;
         let productQuery = {}; //If no specific conditions are added to productQuery, it will remain empty, and the query to fetch products will retrieve all available products.
         // This flexibility allows your code to adapt to different user inputs and filter products accordingly.
 

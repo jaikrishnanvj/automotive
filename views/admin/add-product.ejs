@@ -3,7 +3,7 @@
 
 
    
-       
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
         <section class="content-main">
             <form action="/admin/products/create-new-product" method="post"  enctype="multipart/form-data" onsubmit="return validate()" >
             <div class="row">
@@ -80,24 +80,33 @@
                                 </div> <!-- col.// -->
                             </div> <!-- row.// -->
                             <hr class="mb-4 mt-0">
+                            <!-- Add this inside the Media Section (4. Media) -->
+<div class="row">
+    <div class="col-md-3">
+        <h6>4. Media</h6>
+    </div>
+    <div class="col-md-9">
+        <div class="mb-4">
+            <label class="form-label">Images</label>
+            <!-- File input -->
+            <input class="form-control" type="file" name="images" id="imageInput" multiple>
+            <p class="text-danger" id="brandError"></p>
+        </div>
+        <!-- Image preview container -->
+        <div id="imagePreview" class="mt-2"></div>
+        <!-- <button id="cropImageButton" class="btn btn-primary mt-2">Crop Image</button> -->
+        <button id="saveCropButton" class="btn btn-success mt-2" style="display: none;">Save Crop</button>
+    </div> <!-- col.// -->
+</div> <!-- .row end// -->
+
                             <div class="row">
-                                <div class="col-md-3">
-                                    <h6>4. Media</h6>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="mb-4">
-                                        <label class="form-label">Images</label>
-                                        <input class="form-control" type="file" name="images" multiple>
-                                        <p class="text-danger" id="brandError"></p>
-                                    </div>
-                                </div> <!-- col.// -->
-                            </div> <!-- .row end// -->
-                            <div class="row">
+                                
                                 <div class="col-md-3">
                                     <h6>5 Quantity</h6>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-4">
+                                        <input type="hidden" id="croppedImage" name="croppedImage">
                                         <input name="quantity" type="number" placeholder="0" id="prod_stock" class="form-control" oninput="validateQuantity()">
                                         <p class="text-danger" id="sotckError"></p>
                                     </div>
@@ -114,7 +123,66 @@
             </div>
         </form>
         </section>
-        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+
+<!-- JavaScript code to handle image preview and cropping -->
+<script>
+    
+document.getElementById("imageInput").addEventListener("change", function() {
+    var preview = document.getElementById("imagePreview");
+    preview.innerHTML = ''; // Clear previous previews
+    
+    var files = this.files;
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        if (file.type.match('image.*')) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var img = document.createElement('img');
+                img.src = event.target.result;
+                img.style.maxWidth = '200px'; // Adjust image max width
+                img.style.maxHeight = '200px'; // Adjust image max height
+                img.style.marginRight = '10px'; // Add some spacing between images
+                preview.appendChild(img);
+                
+                // Initialize Cropper.js
+                var cropper = new Cropper(img, {
+                    aspectRatio: 1, // You can adjust aspect ratio as needed
+                    viewMode: 2,
+                    autoCropArea: 1,
+                    ready: function () {
+                        // Show "Save Crop" button when image is ready for cropping
+                        document.getElementById('saveCropButton').style.display = 'block';
+                    }
+                });
+                
+                // Handle "Save Crop" button click
+               document.getElementById('saveCropButton').addEventListener('click', function() {
+    // Get cropped canvas
+    var croppedCanvas = cropper.getCroppedCanvas();
+    // Convert canvas to base64 encoded image
+    var croppedImageBase64 = croppedCanvas.toDataURL();
+    // Set the cropped image data to the hidden input field
+    document.getElementById('croppedImage').value = croppedImageBase64;
+    // Display cropped image
+    var croppedImage = document.createElement('img');
+    croppedImage.src = croppedImageBase64;
+    preview.innerHTML = ''; // Clear previous previews
+    preview.appendChild(croppedImage);
+});
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+});
+
+
+// Handle "Crop Image" button click
+document.getElementById('cropImageButton').addEventListener('click', function() {
+    // Trigger crop mode
+    cropper.crop();
+});
+</script>
     <!-- content-main end// -->
        
     <%- include("../layouts/admin/footer") %>

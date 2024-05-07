@@ -188,13 +188,10 @@
                                     <!-- Use EJS to loop through products -->
                                     <% for(let i=0; i < products.length;i++) { %>
                                         <div class="col-xl-4 col-sm-6 col-6 product-item">
-                                            <!-- Your product item content -->
-                                            <!-- Ensure that each product item has appropriate classes for filtering -->
-                                            <!-- Use EJS to dynamically insert product details -->
-                                            <div class="ltn__product-item ltn__product-item-3 text-center">
+                                            <div class="ltn__product-item ltn__product-item-3 text-center" style="width: 250px; height: 350px;">
                                                 <a href="product-details?id=<%= products[i]._id %>">
-                                                    <div class="product-img">
-                                                        <img src="/public/assetsNew/uploads/<%= products[i].image[0].filename %>" alt="">
+                                                    <div class="product-img-wrapper" style="height: 250px; overflow: hidden; position: relative;">
+                                                        <img class="product-img" src="/public/assetsNew/uploads/<%= products[i].image[0].filename %>" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                                         <div class="product-badge">
                                                             <ul>
                                                                 <li class="sale-badge">Sale price</li>
@@ -223,12 +220,12 @@
                                                         <% } else { %>
                                                             <span>₹<%= products[i].salePrice %></span>
                                                             <del> ₹<%= products[i].regularPrice %></del>
-                                                           
                                                         <% } %>
-                                                </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                     <% } %>
                                 </div>
                             </div>

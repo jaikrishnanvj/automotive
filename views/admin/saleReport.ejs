@@ -24,10 +24,10 @@
             <input type="text" placeholder="Search..." class="form-control">
           </div>
           <div class="col-md-2 col-6">
-            <input type="date" id="startDate" class="form-control" placeholder="Start Date">
+            <input type="date" id="startDate" class="form-control" placeholder="Start Date" value="">
         </div>
         <div class="col-md-2 col-6">
-            <input type="date" id="endDate" class="form-control" placeholder="End Date">
+            <input type="date" id="endDate" class="form-control" placeholder="End Date" value="">
         </div>
         <button onclick="updateSalesReport()" class="btn btn-sm btn-primary float-right">Generate Report</button>
         <style>
@@ -173,27 +173,33 @@
 </main>
 
 <script>
-  async function downloadPDF() {
-  try {
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
+    async function downloadPDF() {
+    try {
+      const startDate = document.getElementById('startDate').value;
+      const endDate = document.getElementById('endDate').value;
+    
+      console.log(startDate,endDate)
+      if (!startDate || !endDate) {
+        console.error('Please select start and end dates.');
+        return;
+      }
+      // Construct the query string with start and end datesst
+      const queryString = `?startDate=${startDate}&endDate=${endDate}`;
+      console.log('QUERY',queryString)
+      const response = await fetch(`/admin/download-pdf${queryString}`);
+      const blob = await response.blob();
 
-    // Construct the query string with start and end dates
-    const queryString = `?startDate=${startDate}&endDate=${endDate}`;
-    const response = await fetch(`/admin/download-pdf${queryString}`);
-    const blob = await response.blob();
-
-    // Create a link element and trigger a click to start the download
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = 'sale_report.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  } catch (error) {
-    console.error('Error downloading PDF:', error);
+      // Create a link element and trigger a click to start the download
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'sale_report.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+    }
   }
-}
 
   
   async function downloadExcel() {
@@ -217,7 +223,18 @@
       console.error('Error downloading Excel:', error);
     }
   }
-  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const startDate = urlParams.get('startDate');
+    const endDate = urlParams.get('endDate');
+
+    // Populate input fields if start and end dates are present in the URL parameters
+    if (startDate && endDate) {
+        document.getElementById('startDate').value = startDate;
+        document.getElementById('endDate').value = endDate;
+    }
+});
+
   function updateSalesReport() {
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;

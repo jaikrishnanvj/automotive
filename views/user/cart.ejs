@@ -243,23 +243,18 @@
                                                         </td>
                                                         <td class="cart-product-quantity">
                                                             <button class="btn btn-sm increment-button"
-                                                                onclick="updateQuantity('quantityInc', '<%= products[i]._id %>')"><span style="font-size: 24px;">&#10133;</span>
-
-
-                                                            </button>
-
-
-                                                            <!-- <input class="quantity-input<%= i %>"
-                                                                id="cartProductqty<%= i %>" style="width: 45px;"
-                                                                type="text" readonly value="<%= cart[i].quantity %>"
-                                                                data-product-index="<%= i %>"> -->
-
-
-                                                                <span><%= cart[i].quantity%></span>
-                                                            
-                                                                <button class="btn btn-sm decrement-button"
-                                                                onclick="updateQuantity('quantityDec', '<%= products[i]._id %>')"><span style="font-size: 24px;">&#10134;</span>
-                                                            </button>
+                                                            onclick="updateQuantity('quantityInc', '<%= products[i]._id %>', '<%= i %>')">
+                                                        <span style="font-size: 24px;">&#10133;</span>
+                                                    </button>
+                                                    
+                                                    <!-- Display the quantity -->
+                                                    <span id="quantityDisplay<%= i %>"><%= cart[i].quantity %></span>
+                                                    
+                                                    <button class="btn btn-sm decrement-button"
+                                                            onclick="updateQuantity('quantityDec', '<%= products[i]._id %>', '<%= i %>')">
+                                                        <span style="font-size: 24px;">&#10134;</span>
+                                                    </button>
+                                                    
                                                         </td>
 
                                                         <td class="cart-product-subtotal">
@@ -328,7 +323,7 @@
                                                             <tr>
                                                                 <td class="cart_total_label">sub Total</td>
                                                                 <td class="cart_total_amount">
-                                                                    <span class="font-lg fw-900 text-brand">₹ <%=
+                                                                    <span  class="font-lg fw-900 text-brand">₹ <%=
                                                                             totalSubTotal.toFixed(2) %></span>
                                                                 </td>
                                                             </tr>
@@ -482,97 +477,51 @@
     <%- include('../layouts/homefooter.ejs') -%>
 
         <script>
-            function updateQuantity(action, productId, index) {
-                console.log(action)
-                console.log(productId);
-                $.ajax({
-
-                    type: 'POST',
-                    url: `/cart/${action}?id=${productId}`,
-                    // data:{id:productId},
-                    
-                    success: function (data) {
-                        console.log("sdsdsd")
-                        console.log(data)
-
-                        if (!data || typeof data !== 'object') {
-                            console.error("Invalid data received from server.");
-                            return;
-                        }
-
-                        if (data.error) {
-                            // Handle specific errors
-                            if (data.error === "Out of stock") {
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Oops...",
-                                    text: "This product is currently out of stock.",
-                                });
-                            } else {
-                                // Handle other errors
-                                console.log("product qty must be  one")
-                            }
-                            return;
-                        }
-
-                        const newQuantity = Math.max(1, data.quantity);
-
-                        console.log(newQuantity, 'llllllll');
-
-                        // const cartProductQty = $(`#cartProductqty${index}`);
-                        // const priceElement = $(`#cartProductqty${index}`).closest('tr').find('.price span');
-
-
-                        const cartProductQty = $(`#cartProductqty${index}`);
-                        const priceElement = $(`#subtotal${index}`).closest('tr').find('price');
-
-                        // const priceElement = $(`#cartProductqty${index}`).closest('tr').find('.cart-product-price');
-                        console.log(priceElement, 'jjjjjjjjjjj');
-
-                        const salePriceStr = priceElement.text().replace('$', '').trim();
-                        location.reload()
-                         
-                        if (!salePriceStr) {
-                            console.error("Error: salePriceStr is null, undefined, or empty");
-                            return;
-                        }
-
-                        // const salePriceElement = document.getElementById('price');
-                        // const salePriceStr = salePriceElement.textContent.trim();
-
-
-                        const salePrice = parseFloat(salePriceStr);
-
-                        console.log(salePrice,'kkkk');
-
-
-                        if (isNaN(salePrice)) {
-                            console.error("Error: salePrice is NaN");
-                        } else {
-                            cartProductQty.val(newQuantity);
-                            const newSubtotal = (newQuantity * salePrice).toFixed(2);
-                            $(`#subtotal${index}`).text(newSubtotal);
-
-                            let totalSubTotal = 0;
-                            $('.text-right[data-title="Cart"] span').each(function () {
-                                totalSubTotal += parseFloat($(this).text());
-                            });
-
-                            $('.cart_total_amount span').text(`$${totalSubTotal.toFixed(2)}`);
-                           
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error("Error updating quantity:", error);
-                        const errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error";
-                        Swal.fire({
-                            icon: "error",
-                            title: "ERROR",
-                            text: errorMessage,
-                        });
-                    }
-                });
+         function updateQuantity(action, productId, index) {
+    $.ajax({
+        type: 'POST',
+        url: `/cart/${action}?id=${productId}`,
+        success: function (data) {
+            if (!data || typeof data !== 'object') {
+                console.error("Invalid data received from server.");
+                return;
             }
+
+            if (data.error) {
+                if (data.error === "Out of stock") {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "This product is currently out of stock.",
+                    });
+                } else {
+                    console.log("product qty must be one")
+                }
+                return;
+            }
+
+            const newQuantity = Math.max(1, data.quantity);
+
+            // Update the quantity display element
+            const quantityDisplayElement = $(`#quantityDisplay${index}`);
+            quantityDisplayElement.text(newQuantity);
+
+            // Rest of your code to update subtotal...
+        },
+        error: function (xhr, status, error) {
+            console.error("Error updating quantity:", error);
+            const errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error";
+            Swal.fire({
+                icon: "error",
+                title: "ERROR",
+                text: errorMessage,
+            });
+        }
+    });
+}
+
+
+
         </script>
 
 

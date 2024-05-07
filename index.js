@@ -34,8 +34,9 @@ const adminRoute = require('./routes/adminRouter');
 connectdb();
 
 // Use userRouter for routes starting with '/'
-app.use('/', userRoute);
 app.use('/admin', adminRoute);
+app.use('/', userRoute);
+
 // Apply headers to all routes
 app.use((req, res, next) => {
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -46,13 +47,13 @@ app.use((req, res, next) => {
 });
 
 // Define a route for the root path '/'
-app.get('/', (req, res) => {
-    res.send('Welcome to the homepage');
-});
+// app.get('/', (req, res) => {
+//     res.send('Welcome to the homepage');
+// });
 
 const hostname = 'localhost'; // Change this to your actual hostname if applicable
 const port = 5000; // Change this to the port your server is listening on
 
 app.listen(port, () => {
-    console.log(`Server is running at http://${hostname}:${port}/login`);
+    console.log(`Server is running at http://${hostname}:${port}/`);
 });

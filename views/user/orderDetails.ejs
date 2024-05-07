@@ -510,14 +510,15 @@
                                 </a>
                               </td>
                               <td class="align-middle">
-                                $<%= order.products[i].price %>
+                                
+                                ₹<%= order.totalPrice.toFixed(2) %>
                               </td>
                               <td class="align-middle">
                                 <%= order.products[i].quantity %>
                               </td>
 
                               <td class="text-end align-middle">
-                                $<%= order.products[i].price %>
+                                ₹<%= order.totalPrice.toFixed(2) %>
                               </td>
                               <td class="align-middle">
                                 <% if (order.products[i].status==="Cancelled" ) { %>
